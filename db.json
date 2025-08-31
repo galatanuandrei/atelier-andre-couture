@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Rochie Elegantă",
+      "price": 350,
+      "description": "Rochie de seară din mătase, culoare bordo.",
+      "image": "https://via.placeholder.com/200"
+    },
+    {
+      "id": 2,
+      "name": "Sacou Casual",
+      "price": 220,
+      "description": "Sacou din bumbac perfect pentru birou.",
+      "image": "https://via.placeholder.com/200"
+    }
+  ]
+}
