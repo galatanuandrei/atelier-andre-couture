@@ -1,18 +1,10 @@
 {
-  "products": [
-    {
-      "id": 1,
-      "name": "Rochie Elegantă",
-      "price": 350,
-      "description": "Rochie de seară din mătase, culoare bordo.",
-      "image": "https://via.placeholder.com/200"
-    },
-    {
-      "id": 2,
-      "name": "Sacou Casual",
-      "price": 220,
-      "description": "Sacou din bumbac perfect pentru birou.",
-      "image": "https://via.placeholder.com/200"
-    }
+  "services": [
+    { "id": 1, "name": "Croitorie personalizată", "description": "Rochii unice, create pentru tine." },
+    { "id": 2, "name": "Accesorii", "description": "Accesorii elegante pentru evenimente speciale." }
+  ],
+  "gallery": [
+    { "id": 1, "title": "Rochii de mireasă", "image": "https://via.placeholder.com/300x200?text=Rochii+Mireasa" },
+    { "id": 2, "title": "Accesorii unice", "image": "https://via.placeholder.com/300x200?text=Accesorii" }
   ]
 }

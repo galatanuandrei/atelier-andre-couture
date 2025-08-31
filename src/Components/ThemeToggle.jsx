@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(() => localStorage.getItem("theme") === "dark");
@@ -8,5 +8,9 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", dark ? "dark" : "light");
   }, [dark]);
 
-  return <button className="btn" onClick={() => setDark(d => !d)}>{dark ? "Light" : "Dark"} mode</button>;
+  return (
+    <button className="btn" onClick={() => setDark(d => !d)}>
+      {dark ? "Light" : "Dark"} Mode
+    </button>
+  );
 }
