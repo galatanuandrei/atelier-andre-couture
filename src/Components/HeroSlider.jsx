@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import '../Styles/HeroSlider.css';
 
 const slides = [
   { id: 1, image: "https://via.placeholder.com/1200x500?text=Rochii+de+Mireasa", caption: "Rochii de vis pentru ziua ta specială" },

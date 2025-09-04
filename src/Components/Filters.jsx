@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import '../Styles/Buttons.css';
 
 export default function Filters({ filters, setFilters, products }) {
   const categories = useMemo(() => {

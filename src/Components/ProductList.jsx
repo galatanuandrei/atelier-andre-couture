@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import '../Styles/Produse-Servicii.css';
 
 export default function ProductList({ products, setProducts, setEditingProduct, API_URL }) {
   if (!products.length) return <p className="muted">Nu există produse. Adaugă unul!</p>;

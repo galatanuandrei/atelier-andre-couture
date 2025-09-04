@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: var(--lux-dark);
+  border-bottom: 2px solid var(--lux-gold);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  color: var(--lux-gold);
+  letter-spacing: 2px;
+}
+
+.header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header nav a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--lux-white);
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.header nav a:hover {
+  color: var(--lux-gold);
+  border-bottom: 1px solid var(--lux-gold);
+}
+
+.header nav a span {
+  background: var(--lux-red);
+  padding: 0.2rem 0.5rem;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  margin-left: 0.3rem;
+}

@@ -1,0 +1,8 @@
+.footer {
+  padding: 1.2rem;
+  text-align: center;
+  background: var(--lux-dark);
+  border-top: 2px solid var(--lux-gold);
+  font-size: 0.9rem;
+  color: var(--lux-white);
+}
