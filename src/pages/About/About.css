@@ -1,0 +1,9 @@
+.about {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--lux-pink);
+  border: 1px solid var(--lux-gold);
+  border-radius: 12px;
+  color: var(--lux-white);
+}

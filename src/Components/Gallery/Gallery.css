@@ -1,0 +1,25 @@
+#gallery {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#gallery h2 {
+  color: var(--lux-gold);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+#gallery .btn {
+  background: var(--lux-white);
+  color: var(--lux-gold);
+  border: 1px solid var(--lux-gold);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+#gallery .btn:hover {
+  background: var(--lux-gold);
+  color: var(--lux-white);
+}

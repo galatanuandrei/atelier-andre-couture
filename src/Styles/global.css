@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display:wght@400;700&display=swap');
+
+:root {
+  --font-family: "Libre Caslon Display", serif;
+  --lux-black: #0D0D0D;       /* text principal */
+  --lux-white: #FAFAFA;       /* fundal */
+  --lux-gold: #C5A572;        /* accente luxury */
+  --lux-dark: #E8C1C5;        /* roz prafuit pentru carduri */
+  --lux-red: #7B2D26;
+  --lux-green: #2E7D32;
+  --lux-pink: #E8C1C5;        /* pentru toggle și hover */
+}
+
+/* ============================= */
+/* Global Styles                 */
+/* ============================= */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  line-height: 1.7;
+  letter-spacing: 0.5px;
+  background-color: var(--lux-white);
+  color: var(--lux-black);
+}
+
+/* ============================= */
+/* Grid & Card Generic           */
+/* ============================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 2rem;
+  margin: 2rem;
+}
+
+.card {
+  background: var(--lux-dark);
+  border: 1px solid var(--lux-gold);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(197,165,114,0.3);
+}
+
+.cover {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--lux-gold);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  color: var(--lux-gold);
+}
+
+p {
+  color: var(--lux-black);
+}
+
+/* ============================= */
+/* Buttons                       */
+/* ============================= */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 6px;
+  padding: 0.6rem 1.4rem;
+  border: 2px solid var(--lux-pink);
+  background-color: var(--lux-white);
+  color: var(--lux-pink);
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: var(--lux-pink);
+  color: var(--lux-white);
+  transform: scale(1.05);
+}

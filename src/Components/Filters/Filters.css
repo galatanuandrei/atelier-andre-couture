@@ -1,0 +1,15 @@
+.filters .row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filters input,
+.filters select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--lux-gold);
+  background: var(--lux-black);
+  color: var(--lux-white); /* completat aici */
+}

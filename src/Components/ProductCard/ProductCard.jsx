@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
+import './ProductCard.css';
 
 export default function ProductCard({ product, setProducts, setEditingProduct, API_URL }) {
   const { addToCart } = useContext(CartContext);
@@ -12,11 +13,7 @@ export default function ProductCard({ product, setProducts, setEditingProduct, A
 
   return (
     <div className="card">
-      <img
-        src={product.image || "https://via.placeholder.com/300x200?text=Produs"}
-        alt={product.name}
-        className="cover"
-      />
+      <img src={product.image || "https://via.placeholder.com/300x200?text=Produs"} alt={product.name} className="cover" />
       <h3>{product.name}</h3>
       {product.description && <p>{product.description}</p>}
       <div className="row">

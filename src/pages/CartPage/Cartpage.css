@@ -1,0 +1,7 @@
+.cart-page h2 {
+  text-align: center;
+  color: var(--lux-gold);
+  margin-bottom: 1rem;
+}
+.cart-page .grid { margin-top: 1rem; }
+.cart-page .btn-danger { margin-top: 0.5rem; }
