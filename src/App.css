@@ -10,18 +10,30 @@
   --lux-green: #2E7D32;
 }
 
+/* ============================= */
+/* Global Styles                 */
+/* ============================= */
 body {
   margin: 0;
   font-family: var(--font-family);
-  background-color: var(--lux-black);
-  color: var(--lux-white);
+  color: var(--lux-black);
   line-height: 1.7;
   letter-spacing: 0.5px;
+
+  /* ✅ Background alb cu linii bronz verticale */
+  background-color: var(--lux-white);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--lux-white) 0px,
+    var(--lux-white) 95px,
+    var(--lux-gold) 96px
+  );
+  background-size: 100px 100px;
 }
 
-[data-theme="light"] {
-  background: var(--lux-white);
-  color: var(--lux-black);
+[data-theme="dark"] {
+  background: var(--lux-black);
+  color: var(--lux-white);
 }
 
 h1, h2, h3 {
