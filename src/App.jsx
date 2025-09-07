@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import HeroSlider from "./Components/HeroSlider/HeroSlider";
 import Products from "./Components/Products/Products";
+import Reviews from "./Components/Reviews/Reviews";
 import Footer from "./Components/Footer/Footer";
 import { CartProvider } from "./context/CartContext";
 
@@ -28,7 +29,13 @@ export default function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<><HeroSlider /><Products products={products} /></>} />
+          <Route path="/" element={
+            <>
+              <HeroSlider />
+              <Products products={products} />
+              <Reviews /> {/* Aici adăugăm recenziile */}
+            </>
+          } />
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />} />
           <Route path="/cart" element={<CartPage />} />
