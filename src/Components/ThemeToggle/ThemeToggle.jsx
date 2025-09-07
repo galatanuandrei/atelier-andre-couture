@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './ThemeToggle.css';
+import "./ThemeToggle.css";
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(() => localStorage.getItem("theme") === "dark");
@@ -10,8 +10,12 @@ export default function ThemeToggle() {
   }, [dark]);
 
   return (
-    <button className={`theme-toggle ${dark ? "dark" : "light"}`} onClick={() => setDark(d => !d)} aria-label="Toggle theme">
-      {dark ? "Light" : "Dark"}
+    <button
+      className={`theme-toggle ${dark ? "dark" : "light"}`}
+      onClick={() => setDark(d => !d)}
+      aria-label="Toggle theme"
+    >
+      {dark ? "🌙 Dark" : "☀️ Light"}
     </button>
   );
 }

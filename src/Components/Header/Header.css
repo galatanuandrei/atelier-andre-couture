@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 2rem;
-  background: var(--lux-dark);
+  background: var(--lux-white);
   border-bottom: 2px solid var(--lux-gold);
   position: sticky;
   top: 0;
@@ -19,25 +19,29 @@
 .header nav {
   display: flex;
   align-items: center; /* centrat vertical */
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .header nav a {
   text-decoration: none;
   font-weight: 500;
-  color: var(--lux-white);
-  transition: color 0.3s, border-bottom 0.3s;
+  color: var(--lux-black);
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 2px;
 }
 
 .header nav a:hover {
   color: var(--lux-gold);
-  border-bottom: 1px solid var(--lux-gold);
+  border-bottom: 2px solid var(--lux-gold);
 }
 
+/* Badge-ul pentru coș (luxury elegant) */
 .header nav a span {
-  background: var(--lux-red);
-  padding: 0.2rem 0.5rem;
+  background: var(--lux-pink);
+  padding: 0.25rem 0.55rem;
   border-radius: 50%;
   font-size: 0.75rem;
   margin-left: 0.3rem;
+  color: var(--lux-white);
+  font-weight: 600;
 }

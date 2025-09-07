@@ -1,27 +1,34 @@
 .theme-toggle {
   padding: 0.5rem 1rem;
-  border: 2px solid var(--lux-gold);
   border-radius: 8px;
-  background-color: var(--lux-white);
-  color: var(--lux-gold);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-left: 1rem;
+  font-family: var(--font-family);
+  letter-spacing: 0.5px;
 }
 
-.theme-toggle:hover {
+/* Light mode button */
+.theme-toggle.light {
+  background-color: var(--lux-white);
+  border: 2px solid var(--lux-gold);
+  color: var(--lux-gold);
+}
+
+.theme-toggle.light:hover {
   background-color: var(--lux-gold);
   color: var(--lux-white);
 }
 
+/* Dark mode button */
 .theme-toggle.dark {
-  background-color: var(--lux-dark);
-  color: var(--lux-white);
-  border: 2px solid var(--lux-gold);
+  background-color: var(--lux-black);
+  border: 2px solid var(--lux-pink);
+  color: var(--lux-pink);
 }
 
 .theme-toggle.dark:hover {
-  background-color: var(--lux-gold);
-  color: var(--lux-dark);
+  background-color: var(--lux-pink);
+  color: var(--lux-black);
 }

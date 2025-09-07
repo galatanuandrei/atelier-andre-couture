@@ -5,10 +5,10 @@
   --lux-black: #0D0D0D;       /* text principal */
   --lux-white: #FAFAFA;       /* fundal */
   --lux-gold: #C5A572;        /* accente luxury */
-  --lux-dark: #E8C1C5;        /* roz prafuit pentru carduri */
+  --lux-dark: #F8F3F4;        /* fundal subtil carduri */
   --lux-red: #7B2D26;
   --lux-green: #2E7D32;
-  --lux-pink: #E8C1C5;        /* pentru toggle și hover */
+  --lux-pink: #E8C1C5;        /* roz prăfuit accent */
 }
 
 /* ============================= */
@@ -21,6 +21,18 @@ body {
   letter-spacing: 0.5px;
   background-color: var(--lux-white);
   color: var(--lux-black);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-family);
+  font-weight: 700;
+  color: var(--lux-gold);
+  letter-spacing: 1px;
+}
+
+p {
+  color: var(--lux-black);
+  font-size: 1rem;
 }
 
 /* ============================= */
@@ -44,7 +56,7 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 20px rgba(197,165,114,0.3);
+  box-shadow: 0 6px 20px rgba(197,165,114,0.25);
 }
 
 .cover {
@@ -56,33 +68,118 @@ body {
   border: 1px solid var(--lux-gold);
 }
 
-h1, h2, h3 {
-  font-family: var(--font-family);
-  font-weight: 700;
-  color: var(--lux-gold);
-}
-
-p {
-  color: var(--lux-black);
-}
-
 /* ============================= */
 /* Buttons                       */
 /* ============================= */
 button {
   font-family: inherit;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
   border-radius: 6px;
   padding: 0.6rem 1.4rem;
   border: 2px solid var(--lux-pink);
   background-color: var(--lux-white);
   color: var(--lux-pink);
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 button:hover {
-  background-color: var(--lux-pink);
+  background-color: var(--lux-gold);
+  border-color: var(--lux-gold);
   color: var(--lux-white);
   transform: scale(1.05);
 }
+
+/* ============================= */
+/* Extra Touches Luxury Vintage  */
+/* ============================= */
+
+/* Subtil border gold pe imagini */
+img {
+  border-radius: 8px;
+  transition: opacity 0.3s;
+}
+img:hover {
+  opacity: 0.9;
+}
+
+/* Titlurile mari cu stil vintage */
+h1 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--lux-gold);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+/* Card titles */
+.card h3 {
+  color: var(--lux-black);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ============================= */
+/* Responsive tweaks             */
+/* ============================= */
+@media(max-width:768px) {
+  .grid {
+    gap: 1rem;
+    margin: 1rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* ============================= */
+/* Dark Mode Overrides           */
+/* ============================= */
+[data-theme="dark"] {
+  background-color: var(--lux-black);
+  color: var(--lux-white);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  color: var(--lux-gold);
+}
+
+[data-theme="dark"] .card {
+  background: var(--lux-black);
+  border-color: var(--lux-pink);
+  color: var(--lux-white);
+}
+
+[data-theme="dark"] .header,
+[data-theme="dark"] .footer {
+  background: var(--lux-black);
+  color: var(--lux-white);
+  border-color: var(--lux-pink);
+}
+
+[data-theme="dark"] .btn {
+  background: var(--lux-black);
+  border: 2px solid var(--lux-pink);
+  color: var(--lux-pink);
+}
+
+[data-theme="dark"] .btn:hover {
+  background: var(--lux-pink);
+  color: var(--lux-black);
+}
+
+/* ============================= */
+/* Dark Mode - Link Styling      */
+/* ============================= */
+[data-theme="dark"] .header nav a {
+  color: var(--lux-white);
+}
+
+[data-theme="dark"] .header nav a:hover {
+  color: var(--lux-gold);
+  border-bottom: 2px solid var(--lux-gold);
+}
+
