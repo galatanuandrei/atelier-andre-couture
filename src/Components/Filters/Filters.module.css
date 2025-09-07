@@ -1,0 +1,49 @@
+/* ================== Filters Card ================== */
+.card.filters {
+  background-color: var(--lux-dark);
+  border: 1px solid var(--lux-gold);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 400px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ================== Input Search ================== */
+.card.filters input[type="text"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--lux-gold);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: var(--font-family);
+  outline: none;
+  background-color: var(--lux-white);
+  color: var(--lux-dark);
+  transition: all 0.3s ease;
+}
+
+.card.filters input[type="text"]::placeholder {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.card.filters input[type="text"]:focus {
+  border-color: var(--lux-pink);
+  box-shadow: 0 0 6px rgba(197, 165, 114, 0.4);
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 768px) {
+  .card.filters {
+    max-width: 95%;
+    padding: 0.8rem;
+  }
+
+  .card.filters input[type="text"] {
+    font-size: 0.85rem;
+  }
+}

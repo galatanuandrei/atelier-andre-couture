@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
-import { FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaTiktok, FaCcVisa, FaCcMastercard, FaCcPaypal } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -55,9 +54,9 @@ export default function Footer() {
             <button type="submit">Abonare</button>
           </form>
           <div className={styles.socialIcons}>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaTiktok /></a>
+            <a href="#"><FaInstagram className={styles.instagram} /></a>
+            <a href="#"><FaFacebookF className={styles.facebook} /></a>
+            <a href="#"><FaTiktok className={styles.tiktok} /></a>
           </div>
         </div>
       </div>
@@ -65,10 +64,9 @@ export default function Footer() {
       {/* Plata & Netopia */}
       <div className={styles.paymentRow}>
         <span>Metode de plată:</span>
-        <FaCcVisa />
-        <FaCcMastercard />
-        <FaCcPaypal />
-        <img src="/netopia.png" alt="Netopia Payments" className={styles.netopia} />
+        <FaCcVisa className={styles.visa} />
+        <FaCcMastercard className={styles.mastercard} />
+        <FaCcPaypal className={styles.paypal} />
       </div>
 
       {/* Copyright */}
