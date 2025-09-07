@@ -66,3 +66,22 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+:root {
+  --font-family: "Libre Caslon Display", serif;
+  --lux-black: #0D0D0D;       /* text principal Light */
+  --lux-white: #FAFAFA;       /* fundal Light */
+  --lux-gold: #C5A572;        /* accente luxury */
+  --lux-dark: #F8F3F4;        /* fundal carduri Light */
+  --lux-pink: #E8C1C5;        /* roz prafuit accent */
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --lux-black: #FAFAFA;       /* text principal Dark */
+  --lux-white: #0D0D0D;       /* fundal Dark */
+  --lux-dark: #1e1e1e;        /* fundal carduri Dark */
+  --lux-pink: #C5A572;        /* accente Dark */
+}
+
+

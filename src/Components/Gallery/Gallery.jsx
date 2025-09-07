@@ -20,7 +20,7 @@ export default function Gallery({ gallery, API_URL }) {
 
   return (
     <section id="gallery">
-      <h2>Galerie Produse</h2>
+      <h2>Galerie Colecții</h2>
       <button className="btn" onClick={handleAddNew}>
         Adaugă produs nou
       </button>

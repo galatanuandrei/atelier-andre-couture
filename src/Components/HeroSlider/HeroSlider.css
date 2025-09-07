@@ -35,3 +35,21 @@
   opacity: 1;
   font-size: 14px;
 }
+
+/* ============================= */
+/* Dark Mode Styling for Slider  */
+/* ============================= */
+[data-theme="dark"] .hero-slider .hero-image {
+  border: 3px solid var(--lux-pink); /* în loc de auriu, folosește roz prăfuit */
+}
+
+[data-theme="dark"] .slick-dots li button:before {
+  color: var(--lux-white); /* buline albe în dark mode */
+  opacity: 0.6;
+}
+
+[data-theme="dark"] .slick-dots li.slick-active button:before {
+  color: var(--lux-gold); /* bulina activă aurie */
+  opacity: 1;
+  font-size: 14px;
+}

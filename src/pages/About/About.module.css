@@ -1,0 +1,74 @@
+.aboutCard {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--lux-white);   /* folosește variabilă CSS */
+  border: 2px solid var(--lux-gold);
+  border-radius: 12px;
+  color: var(--lux-black);
+}
+
+.aboutContainer {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.aboutImage {
+  flex: 1 1 300px;
+}
+
+.aboutImage img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.aboutText {
+  flex: 2 1 500px;
+}
+
+.aboutText h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.aboutText p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.aboutTextFull {
+  margin-top: 2rem;
+}
+
+.aboutTextFull p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .aboutContainer {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .aboutText h2 {
+    font-size: 1.7rem;
+  }
+
+  .aboutImage img {
+    height: auto;
+  }
+}
+
+/* Dark Mode pentru About */
+[data-theme="dark"] .aboutCard {
+  background: var(--lux-dark);
+  border-color: var(--lux-pink);
+  color: var(--lux-white);
+}

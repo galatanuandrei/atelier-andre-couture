@@ -1,0 +1,136 @@
+.footer {
+  background-color: var(--lux-dark);
+  color: var(--lux-white);
+  padding: 2rem 1rem;
+  font-family: var(--font-family);
+  border-top: 1px solid var(--lux-gold);
+}
+
+.footerTop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerCol h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--lux-gold);
+}
+
+.footerCol ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerCol ul li {
+  margin-bottom: 0.3rem;
+}
+
+.footerCol ul li a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.footerCol ul li a:hover {
+  color: var(--lux-gold);
+}
+
+/* Newsletter */
+.footerCol p {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.newsletterForm {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.newsletterForm input {
+  flex: 1;
+  padding: 0.4rem;
+  border: 1px solid var(--lux-gold);
+  border-radius: 4px 0 0 4px;
+  font-size: 0.75rem;
+}
+
+.newsletterForm button {
+  background-color: var(--lux-gold);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background 0.3s;
+}
+
+.newsletterForm button:hover {
+  background-color: var(--lux-pink);
+}
+
+.socialIcons {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.socialIcons a {
+  color: inherit;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.socialIcons a:hover {
+  color: var(--lux-gold);
+  transform: scale(1.2);
+}
+
+/* Payment row */
+.paymentRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-size: 0.8rem;
+}
+
+.paymentRow svg {
+  font-size: 1.5rem;
+}
+
+.netopia {
+  height: 20px;
+  margin-left: 0.5rem;
+}
+
+/* Bottom */
+.footerBottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 0.5rem;
+  font-size: 0.7rem;
+}
+
+/* Light / Dark */
+[data-theme="dark"] .footer {
+  background-color: var(--lux-black);
+  color: var(--lux-white);
+  border-top-color: var(--lux-pink);
+}
+
+[data-theme="light"] .footer {
+  background-color: var(--lux-white);
+  color: var(--lux-black);
+  border-top-color: var(--lux-gold);
+}
+
+[data-theme="light"] .footerCol ul li a {
+  color: var(--lux-black);
+}

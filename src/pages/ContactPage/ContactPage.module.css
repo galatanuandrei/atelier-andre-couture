@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display:wght@400;700&display=swap');
+
+/* Box-sizing global pentru ca padding și border să nu modifice dimensiunea elementelor */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --font-family: "Libre Caslon Display", serif;
+  --lux-black: #0D0D0D;
+  --lux-white: #FAFAFA;
+  --lux-gold: #C5A572;
+  --lux-pink: #E8C1C5;
+  --lux-green: #2E7D32;
+}
+
+/* --- Pagina contact --- */
+.contactPage {
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.dark {
+  background-color: var(--lux-black);
+  color: var(--lux-white);
+}
+
+h2 {
+  color: var(--lux-gold);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Top container: poza + contact simetrice --- */
+.topContainer {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch; /* coloanele au aceeași înălțime */
+}
+
+.leftColumn,
+.rightColumn {
+  flex: 0 0 400px; /* lățime fixă egală */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.designerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* păstrează proporțiile */
+  border-radius: 12px;
+}
+
+.rightColumn {
+  flex-direction: column;
+}
+
+/* --- Cardul de contact centrat --- */
+.contactCard {
+  background: var(--lux-white);
+  border: 1px solid var(--lux-gold);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centrăm conținutul cardului */
+  justify-content: center; /* centru vertical în card */
+  gap: 0.5rem; /* spațiu mic între detalii */
+  height: 100%; /* ocupă întreaga înălțime a coloanei */
+  box-shadow: 0 4px 12px rgba(197,165,114,0.2);
+  transition: all 0.3s ease;
+}
+
+/* Dark mode adjustments */
+.dark .contactCard {
+  background: #1a1a1a;
+  border-color: var(--lux-gold);
+  color: var(--lux-white);
+}
+
+/* Detalii contact centrate */
+.contactDetail {
+  text-align: center;
+  margin-bottom: 0.3rem; /* spațiu mic între detalii */
+}
+
+.detailTitle {
+  font-weight: 700;
+  color: var(--lux-gold);
+  margin-bottom: 0.2rem;
+}
+
+.detailValue {
+  font-weight: 400;
+}
+
+.rightColumn a {
+  color: var(--lux-pink);
+  text-decoration: none;
+}
+
+.rightColumn a:hover {
+  text-decoration: underline;
+}
+
+/* --- Google Maps --- */
+.mapContainer {
+  width: 100%;
+  max-width: 1024px;
+  margin-top: 2rem;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Formular --- */
+.formContainer {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--lux-gold);
+  outline: none;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.success {
+  color: var(--lux-green);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Buton trimite centrat și stabil la hover */
+.btn {
+  width: 100%; /* același width ca inputurile */
+  padding: 0.8rem 1.4rem;
+  border-radius: 6px;
+  border: 2px solid var(--lux-pink);
+  background-color: var(--lux-white);
+  color: var(--lux-pink);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  /* fără align-self */
+}
+
+.btn:hover {
+  background-color: var(--lux-gold);
+  color: var(--lux-white);
+  border-color: var(--lux-gold); /* border rămâne aceleași dimensiuni */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* --- Responsive --- */
+@media(max-width: 1024px) {
+  .topContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%;
+    flex: none;
+  }
+
+  .designerImg,
+  .contactCard {
+    height: auto;
+  }
+}
+
+@media(max-width: 768px) {
+  .topContainer {
+    gap: 1rem;
+  }
+
+  .formContainer {
+    margin-top: 1.5rem;
+  }
+}
+
+.socialIcons {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.socialIcons a {
+  font-size: 2rem;
+  color: var(--lux-pink);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socialIcons a:hover {
+  transform: scale(1.2);
+  color: var(--lux-gold);
+}
+

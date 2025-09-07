@@ -1,10 +1,17 @@
 {
-  "services": [
-    { "id": 1, "name": "Croitorie personalizată", "description": "Rochii unice, create pentru tine." },
-    { "id": 2, "name": "Accesorii", "description": "Accesorii elegante pentru evenimente speciale." }
-  ],
+    "products": [
+      { "id": 1, "title": "Colecția de Vară", "description": "Ținute lejere și elegante pentru zile însorite.", "image": "https://via.placeholder.com/300x200?text=Colecția+Vară" },
+      { "id": 2, "title": "Girls Couture", "description": "Eleganță și rafinament în garderoba fetelor, cu piese exclusive pentru momente speciale.", "image": "https://via.placeholder.com/300x200?text=Colecția+Iarnă" },
+      { "id": 3, "title": "Colecția de Seară", "description": "Ținute elegante pentru petreceri și seri deosebite.", "image": "https://via.placeholder.com/300x200?text=Colecția+Seară" },
+      { "id": 4, "title": "Colecția Office", "description": "Piese elegante și rafinate, perfecte pentru garderoba office cu stil și lux.", "image": "https://via.placeholder.com/300x200?text=Colecția+Casual" }
+    ],
+  
+
   "gallery": [
     { "id": 1, "title": "Rochii de mireasă", "image": "https://via.placeholder.com/300x200?text=Rochii+Mireasa" },
     { "id": 2, "title": "Accesorii unice", "image": "https://via.placeholder.com/300x200?text=Accesorii" }
-  ]
+  ],
+  "messages": [],
+  "cart": []
+
 }

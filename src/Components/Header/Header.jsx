@@ -11,10 +11,11 @@ export default function Header() {
     <header className="header">
       <h1>Atelier Andre Couture</h1>
       <nav>
-        <Link to="/">Acasă</Link>
-        <Link to="/about">Despre mine</Link>
-        <Link to="/gallery">Galerie</Link>
-        <Link to="/cart">🛒 Coș {cart.length > 0 && <span>({cart.length})</span>}</Link>
+        <Link to="/">ACASĂ</Link>
+        <Link to="/gallery">COLECȚII</Link>
+        <Link to="/about">DESPRE NOI</Link>
+        <Link to="/contact">CONTACT</Link>
+        <Link to="/cart">🛒 COȘ {cart.length > 0 && <span>({cart.length})</span>}</Link>
         <ThemeToggle />
       </nav>
     </header>
