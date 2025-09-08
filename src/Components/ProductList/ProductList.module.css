@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.muted {
+  text-align: center;
+  font-style: italic;
+  color: var(--lux-gray);
+  margin-top: 2rem;
+}
+
+[data-theme="dark"] .muted {
+  color: var(--lux-light-gray);
+}

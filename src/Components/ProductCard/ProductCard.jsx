@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
-import './ProductCard.css';
+import styles from "./ProductCard.module.css";
 
 export default function ProductCard({ product, setProducts, setEditingProduct, API_URL }) {
   const { addToCart } = useContext(CartContext);
@@ -12,13 +12,18 @@ export default function ProductCard({ product, setProducts, setEditingProduct, A
   };
 
   return (
-    <div className="card">
-      <img src={product.image || "https://via.placeholder.com/300x200"} alt={product.title} className="cover" />
+    <div className={styles.card}>
+      <img
+        src={product.image || "https://via.placeholder.com/300x200"}
+        alt={product.title}
+        className={styles.cover}
+      />
       <h3>{product.title}</h3>
-      <div className="row">
-        <button className="btn" onClick={() => setEditingProduct(product)}>Editează</button>
-        <button className="btn btn-danger" onClick={handleDelete}>Șterge</button>
-        <button className="btn" onClick={() => addToCart(product)}>Adaugă în coș</button>
+      <p className={styles.price}>Preț: {product.price} RON</p>
+      <div className={styles.row}>
+        <button className={styles.btn} onClick={() => setEditingProduct(product)}>Editează</button>
+        <button className={`${styles.btn} ${styles.btnDanger}`} onClick={handleDelete}>Șterge</button>
+        <button className={styles.btn} onClick={() => addToCart(product)}>Adaugă în coș</button>
       </div>
     </div>
   );

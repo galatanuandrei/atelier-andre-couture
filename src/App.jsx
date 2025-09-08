@@ -20,8 +20,15 @@ export default function App() {
   const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/products`).then(res => res.json()).then(setProducts).catch(console.error);
-    fetch(`${API_URL}/gallery`).then(res => res.json()).then(setGallery).catch(console.error);
+    fetch(`${API_URL}/products`)
+      .then(res => res.json())
+      .then(setProducts)
+      .catch(console.error);
+
+    fetch(`${API_URL}/gallery`)
+      .then(res => res.json())
+      .then(setGallery)
+      .catch(console.error);
   }, []);
 
   return (
@@ -33,11 +40,12 @@ export default function App() {
             <>
               <HeroSlider />
               <Products products={products} />
-              <Reviews /> {/* Aici adăugăm recenziile */}
+              <Reviews />
             </>
           } />
           <Route path="/about" element={<About />} />
           <Route path="/gallery" element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />} />
+          <Route path="/gallery/:collectionId" element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/contact" element={<ContactPage API_URL={API_URL} />} />
         </Routes>
