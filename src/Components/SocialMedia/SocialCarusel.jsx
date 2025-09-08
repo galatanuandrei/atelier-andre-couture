@@ -1,45 +1,69 @@
 import React from "react";
-import styles from "./SocialCarusel.module.css";
-import { FaInstagram } from "react-icons/fa";
-
-// Import manual pozele
-import insta1 from "../../assets/poze-site/instagram/insta1.jpg";
-import insta2 from "../../assets/poze-site/instagram/insta2.jpg";
-import insta3 from "../../assets/poze-site/instagram/insta3.jpg";
+import Marquee from "react-fast-marquee";
+import { Card, CardContent } from "@/components/ui/card";
 
 const SocialCarusel = () => {
-  const data = [
-    { image: insta1, link: "https://www.instagram.com/ralu.andre/" },
-    { image: insta2, link: "https://www.instagram.com/ralu.andre/" },
-    { image: insta3, link: "https://www.instagram.com/ralu.andre/" },
+  // Acum imaginile vin direct din public/
+  const defaultData = [
+    {
+      image: "/poze-site/instagram/insta1.jpg",
+      link: "https://www.instagram.com/ralu.andre/",
+    },
+    {
+      image: "/poze-site/instagram/insta2.jpg",
+      link: "https://www.instagram.com/ralu.andre/",
+    },
+    {
+      image: "/poze-site/instagram/insta3.jpg",
+      link: "https://www.instagram.com/ralu.andre/",
+    },
+    {
+      image: "/poze-site/instagram/insta4.jpg",
+      link: "https://www.instagram.com/ralu.andre/",
+    },
+    {
+      image: "/poze-site/instagram/insta5.jpg",
+      link: "https://www.instagram.com/ralu.andre/",
+    },
+    {
+      image: "/poze-site/instagram/insta6.jpg",
+      link: "https://www.instagram.com/ralu.andre/",
+    },
   ];
 
   return (
-    <div className={styles.instagramSection}>
-      {/* Titlu cu iconiță Instagram */}
-      <div className={styles.header}>
-        <FaInstagram className={styles.icon} />
-        <h3>Instagram</h3>
+    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-50 to-purple-50">
+      <div className="max-w-7xl mx-auto text-center mb-8">
+        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-2">
+          Urmărește-ne pe Instagram
+        </h2>
+        <p className="text-lg text-gray-600">
+          Descoperă cele mai noi creații și inspirații din atelier.
+        </p>
       </div>
 
-      {/* Cele 3 poze */}
-      <div className={styles.imageGrid}>
-        {data.map((item, index) => (
-          <a
-            key={index}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={item.image}
-              alt={`Instagram ${index + 1}`}
-              className={styles.image}
-            />
-          </a>
-        ))}
-      </div>
-    </div>
+      {/* Carusel */}
+      <Marquee gradient={false} speed={50} pauseOnHover={true}>
+        <div className="flex space-x-6">
+          {defaultData.map((item, index) => (
+            <Card
+              key={index}
+              className="overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                <CardContent className="p-0">
+                  <img
+                    src={item.image}
+                    alt={`Instagram ${index + 1}`}
+                    className="w-64 h-64 object-cover"
+                  />
+                </CardContent>
+              </a>
+            </Card>
+          ))}
+        </div>
+      </Marquee>
+    </section>
   );
 };
 

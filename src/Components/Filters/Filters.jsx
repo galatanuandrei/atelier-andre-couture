@@ -1,9 +1,10 @@
-import React, { useMemo } from "react";
-import './Filters.module.css';
+// src/Components/Filters/Filters.jsx
+import React from "react";
+import styles from "./Filters.module.css";
 
-export default function Filters({ filters, setFilters, gallery }) {
+export default function Filters({ filters, setFilters, products = [] }) {
   return (
-    <div className="card filters">
+    <div className={styles.card || "card filters"}>
       <div className="row">
         <input
           type="text"
