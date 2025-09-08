@@ -12,6 +12,7 @@ import About from "./pages/About/About";
 import GalleryPage from "./pages/GalleryPage/GalleryPage";
 import CartPage from "./pages/CartPage/CartPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import Night from "./pages/night/night"; // ✅ import Night.jsx
 
 const API_URL = "http://localhost:3008";
 
@@ -36,18 +37,30 @@ export default function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={
-            <>
-              <HeroSlider />
-              <Products products={products} />
-              <Reviews />
-            </>
-          } />
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSlider />
+                <Products products={products} />
+                <Reviews />
+              </>
+            }
+          />
           <Route path="/about" element={<About />} />
-          <Route path="/gallery" element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />} />
-          <Route path="/gallery/:collectionId" element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />} />
+          <Route
+            path="/gallery"
+            element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />}
+          />
+          <Route
+            path="/gallery/:collectionId"
+            element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />}
+          />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/contact" element={<ContactPage API_URL={API_URL} />} />
+
+          {/* ✅ Ruta pentru Colecția de Seară */}
+          <Route path="/night" element={<Night />} />
         </Routes>
         <Footer />
       </Router>

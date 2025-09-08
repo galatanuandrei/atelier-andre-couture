@@ -85,7 +85,13 @@ export default function GalleryPage({ gallery, setGallery, API_URL }) {
           <div
             key={c.collectionId}
             className={styles.card}
-            onClick={() => navigate(`/gallery/${c.collectionId}`)}
+            onClick={() => {
+              if (c.collectionId === 3) {
+                navigate("/night"); // Colecția de seară
+              } else {
+                navigate(`/gallery/${c.collectionId}`);
+              }
+            }}
           >
             <img src={c.image} alt={c.title} />
             <div className={styles.overlay}>
