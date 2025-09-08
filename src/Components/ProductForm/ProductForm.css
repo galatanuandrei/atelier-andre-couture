@@ -1,2 +1,1 @@
-.form { display:flex; flex-direction:column; gap:1rem; max-width:500px; margin:2rem auto; padding:1.5rem; background:var(--lux-dark); border:1px solid var(--lux-gold); border-radius:10px; }
-.form input, .form textarea, .form select { padding:0.7rem; border:1px solid var(--lux-gold); border-radius:6px; background:var(--lux-black); color:var(--lux-white); font-size:1rem; }
+.form { display:flex; flex-direction:column; gap:1rem; max-width:500px; margin:2rem auto; padding:1.5rem; background:var(--lux-dark); border:1px solid var(--lux-gold); border-radius:10px; } .form input, .form textarea, .form select { padding:0.7rem; border:1px solid var(--lux-gold); border-radius:6px; background:var(--lux-black); color:var(--lux-white); font-size:1rem; }

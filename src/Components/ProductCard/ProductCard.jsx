@@ -1,32 +1,24 @@
-// src/Components/ProductCard/ProductCard.jsx
-import React from "react";
-import { FaEdit, FaTrash } from "react-icons/fa";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import './ProductCard.css';
 
-export default function ProductCard({ product, setEditingProduct, setProducts, API_URL }) {
-  const handleDelete = () => {
-    if (!window.confirm("Sigur vrei să ștergi produsul?")) return;
+export default function ProductCard({ product, setProducts, setEditingProduct, API_URL }) {
+  const { addToCart } = useContext(CartContext);
 
+  const handleDelete = () => {
+    if (!window.confirm(`Ștergi "${product.title}"?`)) return;
     fetch(`${API_URL}/gallery/${product.id}`, { method: "DELETE" })
-      .then(res => {
-        if (!res.ok) throw new Error("Eroare la ștergere");
-        setProducts(prev => prev.filter(p => p.id !== product.id));
-      })
-      .catch(err => alert("Eroare: " + err.message));
+      .then(() => setProducts(prev => prev.filter(p => p.id !== product.id)));
   };
 
   return (
-    <div className="card product-card">
-      <img src={product.image} alt={product.title} />
+    <div className="card">
+      <img src={product.image || "https://via.placeholder.com/300x200"} alt={product.title} className="cover" />
       <h3>{product.title}</h3>
-      <p>{product.description}</p>
-      <div className="actions">
-        <button className="btn btn-ghost" onClick={() => setEditingProduct(product)}>
-          <FaEdit /> Edit
-        </button>
-        <button className="btn btn-error" onClick={handleDelete}>
-          <FaTrash /> Delete
-        </button>
+      <div className="row">
+        <button className="btn" onClick={() => setEditingProduct(product)}>Editează</button>
+        <button className="btn btn-danger" onClick={handleDelete}>Șterge</button>
+        <button className="btn" onClick={() => addToCart(product)}>Adaugă în coș</button>
       </div>
     </div>
   );
