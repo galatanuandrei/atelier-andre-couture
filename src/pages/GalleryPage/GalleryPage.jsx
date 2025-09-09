@@ -9,37 +9,40 @@ import searaImg from "../../assets/Poze-site/Acasap/seara.jpeg";
 import varaImg from "../../assets/Poze-site/Acasap/vara.jpg";
 import styles from "./GalleryPage.module.css";
 
-export default function GalleryPage({ gallery, setGallery, API_URL }) {
+export default function GalleryPage({ gallery = [], setGallery, API_URL }) {
   const { collectionId } = useParams();
   const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
   const [editingProduct, setEditingProduct] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [filters, setFilters] = useState({ search: "" });
 
-  // Colecțiile extra (Girls Couture, Office etc.)
+  // Extra collections for homepage/cards navigation
   const extraCollections = [
-    { collectionId: 1, title: "Girls Couture", image: kidsImg },
-    { collectionId: 2, title: "Colecția Office", image: officeImg },
-    { collectionId: 3, title: "Colecția de Seară", image: searaImg },
-    { collectionId: 4, title: "Colecția de Vară", image: varaImg },
+    { collectionId: 1, title: "Girls Couture", image: kidsImg, route: "/girls" },
+    { collectionId: 2, title: "Colecția Office", image: officeImg, route: "/office" },
+    { collectionId: 3, title: "Colecția de Seară", image: searaImg, route: "/night" },
+    { collectionId: 4, title: "Colecția de Vară", image: varaImg, route: "/summer" },
   ];
 
   useEffect(() => {
     if (collectionId) {
       setProducts(
-        gallery.filter(p => p.collectionId === parseInt(collectionId))
+        gallery.filter(p => p.collectionId === Number(collectionId))
       );
     } else {
       setProducts(gallery);
     }
   }, [collectionId, gallery]);
 
-  const filteredProducts = products.filter(
-    p =>
-      p.title.toLowerCase().includes(filters.search.toLowerCase()) ||
-      p.description.toLowerCase().includes(filters.search.toLowerCase())
-  );
+  const q = (filters.search || "").trim().toLowerCase();
+
+  const filteredProducts = products.filter(p => {
+    const title = (p.title || "").toLowerCase();
+    const desc = (p.description || "").toLowerCase();
+    return !q || title.includes(q) || desc.includes(q);
+  });
 
   const handleAddNew = () => {
     setEditingProduct(null);
@@ -49,6 +52,7 @@ export default function GalleryPage({ gallery, setGallery, API_URL }) {
   return (
     <section className={styles.gallery}>
       <h2>Galerie Colecții</h2>
+
       <Filters filters={filters} setFilters={setFilters} />
 
       <button className={styles.btn} onClick={handleAddNew}>
@@ -67,7 +71,6 @@ export default function GalleryPage({ gallery, setGallery, API_URL }) {
         />
       )}
 
-      {/* Produsele filtrate / rochii de mireasă */}
       <ProductList
         products={filteredProducts.map(p => ({
           ...p,
@@ -78,23 +81,18 @@ export default function GalleryPage({ gallery, setGallery, API_URL }) {
         API_URL={API_URL}
       />
 
-      {/* Extra colecții */}
-      <h2>Colecții Speciale</h2>
-      <div className={styles.grid}>
-        {extraCollections.map(c => (
+      <h2 style={{ marginTop: "2.5rem" }}>Colecții Speciale</h2>
+      <div className={styles.collectionsGrid}>
+        {extraCollections.map((c) => (
           <div
             key={c.collectionId}
-            className={styles.card}
-            onClick={() => {
-              if (c.collectionId === 3) {
-                navigate("/night"); // Colecția de seară
-              } else {
-                navigate(`/gallery/${c.collectionId}`);
-              }
-            }}
+            className={styles.collectionCard}
+            onClick={() => navigate(c.route)}
+            role="button"
+            tabIndex={0}
           >
             <img src={c.image} alt={c.title} />
-            <div className={styles.overlay}>
+            <div className={styles.collectionOverlay}>
               <h3>{c.title}</h3>
             </div>
           </div>

@@ -3,7 +3,6 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .btn {
   padding: 0.6rem 1.2rem;
   border-radius: 6px;
@@ -13,88 +12,31 @@
   font-weight: 600;
   cursor: pointer;
   margin-bottom: 1.5rem;
-  transition: background-color 0.3s ease, color 0.3s ease box-shadow 0.3s ease;
-
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
+.btn:hover { background-color: var(--lux-pink); color: var(--lux-white); }
 
-.btn:hover {
-  background-color: var(--lux-pink);
-}
-
-[data-theme="dark"] .btn {
-  color: var(--lux-black);
-  background-color: var(--lux-pink);
-}
-
-.gallery {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.grid {
+.collectionsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
 }
-
-.card {
+.collectionCard {
   position: relative;
-  cursor: pointer;
+  border-radius: 10px;
   overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.card:hover img {
-  transform: scale(1.05);
-}
-
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.5);
-  color: var(--lux-white);
-  text-align: center;
-  padding: 0.5rem;
-  transition: background 0.3s ease;
-}
-
-.card:hover .overlay {
-  background: rgba(0,0,0,0.7);
-}
-
-.btn {
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
-  border: 2px solid var(--lux-pink);
-  background-color: var(--lux-white);
-  color: var(--lux-pink);
-  font-weight: 600;
   cursor: pointer;
-  margin-bottom: 1.5rem;
-  transition: background-color 0.3s ease, color 0.3s ease box-shadow 0.3s ease;
+  border: 1px solid rgba(255,215,0,0.2);
 }
-
-.btn:hover {
-  background-color: var(--lux-pink);
+.collectionCard img { width: 100%; height: 180px; object-fit: cover; display: block; }
+.collectionOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(0,0,0,0.55) 100%);
   color: var(--lux-white);
 }
-
-[data-theme="dark"] .btn {
-  color: var(--lux-black);
-  background-color: var(--lux-pink);
-}
-
+.collectionOverlay h3 { margin: 0; color: var(--lux-gold); }

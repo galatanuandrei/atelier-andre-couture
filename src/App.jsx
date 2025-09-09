@@ -12,7 +12,12 @@ import About from "./pages/About/About";
 import GalleryPage from "./pages/GalleryPage/GalleryPage";
 import CartPage from "./pages/CartPage/CartPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
-import Night from "./pages/night/night"; // ✅ import Night.jsx
+
+// Colecții speciale
+import Night from "./pages/night/night";
+import Girls from "./pages/girls/Girls";
+import Office from "./pages/office/office";
+import Summer from "./pages/summer/Summer";
 
 const API_URL = "http://localhost:3008";
 
@@ -59,8 +64,11 @@ export default function App() {
           <Route path="/cart" element={<CartPage />} />
           <Route path="/contact" element={<ContactPage API_URL={API_URL} />} />
 
-          {/* ✅ Ruta pentru Colecția de Seară */}
+          {/* Colecții speciale */}
           <Route path="/night" element={<Night />} />
+          <Route path="/girls" element={<Girls />} />
+          <Route path="/office" element={<Office />} />
+          <Route path="/summer" element={<Summer />} />
         </Routes>
         <Footer />
       </Router>

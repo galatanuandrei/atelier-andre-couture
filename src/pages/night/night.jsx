@@ -21,6 +21,18 @@ import p8_1 from "../../assets/poze-site/colectiiseara/Produs8/24.jpeg";
 import p9_1 from "../../assets/poze-site/colectiiseara/Produs9/27.jpg";
 import p10_1 from "../../assets/poze-site/colectiiseara/Produs10/30.jpg";
 import p11_1 from "../../assets/poze-site/colectiiseara/Produs11/31.jpeg";
+import p4_2 from "../../assets/poze-site/colectiiseara/Produs4/13.jpg";
+import p4_3 from "../../assets/poze-site/colectiiseara/Produs4/14.jpeg";
+import p5_2 from "../../assets/poze-site/colectiiseara/Produs5/16.jpg";
+import p6_2 from "../../assets/poze-site/colectiiseara/Produs6/18.jpeg";
+import p6_3 from "../../assets/poze-site/colectiiseara/Produs6/19.jpg";
+import p7_2 from "../../assets/poze-site/colectiiseara/Produs7/21.jpeg";
+import p7_3 from "../../assets/poze-site/colectiiseara/Produs7/22.jpeg";
+import p7_4 from "../../assets/poze-site/colectiiseara/Produs7/23.jpg";
+import p8_2 from "../../assets/poze-site/colectiiseara/Produs8/25.jpeg";
+import p8_3 from "../../assets/poze-site/colectiiseara/Produs8/26.jpeg";
+import p9_2 from "../../assets/poze-site/colectiiseara/Produs9/28.jpg";
+import p9_3 from "../../assets/poze-site/colectiiseara/Produs9/29.jpg";
 
 // --- DATE PRODUSE ---
 const nightProducts = [
@@ -57,7 +69,7 @@ Aceasta rochie este expresia perfectiunii intre delicatete si forta. Corsetul pl
     title: "Rochie drapată cu fustă voal",
     description: `Rochie rosie din matase naturala, cu corset drapat manual si fusta din voal tip a-line. Bretelele delicate si drapajul orizontal subliniaza talia si decolteul in forma de inima, evidentiind linia feminina a bustului. Inchidere la spate cu fermoar ascuns. Croiala este gandita sa evidentieze talia si sa ofere un echilibru intre rafinament si confort.
 Compozitie: 100% matase naturala. Disponibila doar la comanda, in diverse culori si marimi.`,
-    images: [p4_1],
+    images: [p4_1,p4_2,p4_3],
     price: 190
   },
   {
@@ -66,7 +78,7 @@ Compozitie: 100% matase naturala. Disponibila doar la comanda, in diverse culori
     description: `Fusta midi realizata din matase naturala, cu pliseuri fine lucrate manual. Talia este marcata, iar croiala fluida ofera libertate de miscare si un aspect elegant. Este o piesa versatila, ce poate fi purtata atat la ocazii speciale, cat si in tinute de zi sofisticate.
 Compozitie: 100% matase naturala. Disponibila doar la comanda, in diverse culori si marimi.
 Aceasta fusta burgundy este un omagiu adus feminitatii discrete si rafinate. Pliseurile ei se misca usor la fiecare pas, oferind o eleganta naturala si o nota subtila de seductie. O piesa care adauga profunzime si caracter oricarei tinute, facandu-te sa te simti increzatoare si sofisticata.`,
-    images: [p5_1],
+    images: [p5_1,p5_2],
     price: 120
   },
   {
@@ -74,7 +86,7 @@ Aceasta fusta burgundy este un omagiu adus feminitatii discrete si rafinate. Pli
     title: "Rochie cu bretele fundă",
     description: `Aceasta rochie vine intr-o culoare indrazneata. Fusta midi realizata din matase naturala, cu pliseuri fine lucrate manual. Talia este marcata de corset, iar croiala fluida ofera libertate de miscare si un aspect elegant. Este o piesa versatila, ce poate fi purtata atat la ocazii speciale, cat si in tinute de zi sofisticate. Inchidere la spate cu fermoar ascuns.
 Compozitie: 100% matase naturala. Disponibila doar la comanda, in diverse culori si marimi.`,
-    images: [p6_1],
+    images: [p6_1,p6_2,p6_3],
     price: 230
   },
   {
@@ -82,7 +94,7 @@ Compozitie: 100% matase naturala. Disponibila doar la comanda, in diverse culori
     title: "Rochie cu fustă dreaptă cu trenă",
     description: `Rochia este realizata din tafta de calitate, un material distins folosit pentru rochii de ocazie, ce se remarca prin luciul sau subtil ce-i ofera o nota de eleganta deosebita. Rochia prezinta un corset cu decolteu drept, bretea cu funda dubla, rochie tip sirena cu crapatura si trena. Este o rochie deosebita, pentru un eveniment deosebit. Inchidere la spate cu fermoar ascuns.
 Compozitie: 100% poliamida. Disponibila pe baza de comanda, intr-o larga varietate de culori.`,
-    images: [p7_1],
+    images: [p7_1,p7_2,p7_3,p7_4],
     price: 270
   },
   {
@@ -90,7 +102,7 @@ Compozitie: 100% poliamida. Disponibila pe baza de comanda, intr-o larga varieta
     title: "Rochie cu fulgi de struț",
     description: `Rochie cu corset drapat, forma de scoica, fara bretele, cu fusta dreapta si terminatie din fulgi de strut. Este o rochie deosebita, pentru un eveniment deosebit. Rochia este realizata din tafta de calitate, un material distins folosit pentru rochii de ocazie, ce se remarca prin luciul sau subtil ce-i ofera o nota de eleganta deosebita. Inchidere la spate cu fermoar ascuns.
 Compozitie: 100% poliamida. Disponibila pe baza de comanda, intr-o larga varietate de culori.`,
-    images: [p8_1],
+    images: [p8_1,p8_2,p8_3],
     price: 220
   },
   {
@@ -98,7 +110,7 @@ Compozitie: 100% poliamida. Disponibila pe baza de comanda, intr-o larga varieta
     title: "Rochie cu broderie florală",
     description: `Rochie eleganta cu corset "V" si cu fusta din tulle voluminoasa si diafana, care confera miscare si gratie la fiecare pas. Talie marcata subtil pentru a evidentia silueta, iar bustul pastreaza o linie simpla si rafinata. Broderia florala aplicata manual adauga detalii delicate si sofisticate. Bretelele delicate completeaza armonios designul, iar inchiderea discretă la spate cu fermoar ascuns pastreaza linia impecabila a croielii. Croiala fluida avantajeaza orice silueta si asigura confort in purtare.
 Aceasta rochie este o declaratie de feminitate si eleganta atemporala. Tulle-ul diafan creeaza o prezenta delicata si visatoare, iar broderia florala ofera un detaliu artistic si romantic. Perfecta pentru momente speciale. Compozitie captuseala: 80% bumbac, 20% matase naturala. Compozitie exterior: 80% poliamida, 20% bumbac. Disponibila doar la comanda, adaptata pe masuri si culori preferate.`,
-    images: [p9_1],
+    images: [p9_1,p9_2,p9_3],
     price: 240
   },
   {
