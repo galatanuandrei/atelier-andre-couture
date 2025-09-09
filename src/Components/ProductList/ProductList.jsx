@@ -11,8 +11,9 @@ export default function ProductList({ products, setProducts, setEditingProduct, 
         <ProductCard
           key={p.id}
           product={p}
-          setProducts={setProducts}
           setEditingProduct={setEditingProduct}
+          setProducts={setProducts}
+          products={products}
           API_URL={API_URL}
         />
       ))}

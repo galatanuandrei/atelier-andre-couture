@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Night.module.css";
+import Buton from "../../Components/Buton/Buton";
 
 // --- IMAGINI PRODUSE (doar prima imagine pentru grilă, restul în popup) ---
 import p1_1 from "../../assets/poze-site/colectiiseara/Produs1/1.jpg";
@@ -163,6 +164,9 @@ export default function Night() {
 
   return (
     <section className={styles.nightGallery}>
+      <div style={{ marginBottom: "1rem" }}>
+        <Buton targetRoute="/gallery" />
+      </div>
       <h2>Colecția de Seară</h2>
       <div className={styles.grid}>
         {nightProducts.map((product) => (

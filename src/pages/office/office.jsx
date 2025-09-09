@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Office.module.css";
+import Buton from "../../Components/Buton/Buton";
 
 import o1_1 from "../../assets/poze-site/office/Produs1/1.jpeg";
 import o1_2 from "../../assets/poze-site/office/Produs1/2.jpeg";
@@ -34,6 +35,9 @@ export default function Office() {
 
   return (
     <section className={styles.gallery}>
+      <div style={{ marginBottom: "1rem" }}>
+        <Buton targetRoute="/gallery" />
+      </div>
       <h2>Colecția Office</h2>
       <div className={styles.grid}>
         {officeProducts.map(product => (

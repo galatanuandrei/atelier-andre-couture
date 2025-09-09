@@ -8,6 +8,7 @@ import Reviews from "./Components/Reviews/Reviews";
 import Footer from "./Components/Footer/Footer";
 import { CartProvider } from "./context/CartContext";
 
+// Pagini generale
 import About from "./pages/About/About";
 import GalleryPage from "./pages/GalleryPage/GalleryPage";
 import CartPage from "./pages/CartPage/CartPage";
@@ -15,7 +16,7 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 
 // Colecții speciale
 import Night from "./pages/night/night";
-import Girls from "./pages/girls/Girls";
+import Girls from "./pages/girls/girls";
 import Office from "./pages/office/office";
 import Summer from "./pages/summer/Summer";
 
@@ -26,11 +27,13 @@ export default function App() {
   const [gallery, setGallery] = useState([]);
 
   useEffect(() => {
+    // 🔹 Produse generale (cele 4 colecții din homepage)
     fetch(`${API_URL}/products`)
       .then(res => res.json())
       .then(setProducts)
       .catch(console.error);
 
+    // 🔹 Galerie (ex: rochii de mireasă, accesorii etc.)
     fetch(`${API_URL}/gallery`)
       .then(res => res.json())
       .then(setGallery)
@@ -42,6 +45,7 @@ export default function App() {
       <Router>
         <Header />
         <Routes>
+          {/* Home */}
           <Route
             path="/"
             element={
@@ -52,23 +56,27 @@ export default function App() {
               </>
             }
           />
+
+          {/* Pagini generale */}
           <Route path="/about" element={<About />} />
           <Route
             path="/gallery"
-            element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />}
-          />
-          <Route
-            path="/gallery/:collectionId"
-            element={<GalleryPage gallery={gallery} setGallery={setGallery} API_URL={API_URL} />}
+            element={
+              <GalleryPage
+                gallery={gallery}
+                setGallery={setGallery}
+                API_URL={API_URL}
+              />
+            }
           />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/contact" element={<ContactPage API_URL={API_URL} />} />
 
-          {/* Colecții speciale */}
-          <Route path="/night" element={<Night />} />
-          <Route path="/girls" element={<Girls />} />
-          <Route path="/office" element={<Office />} />
-          <Route path="/summer" element={<Summer />} />
+          {/* Colecții speciale (iau produsele cu ?collection=...) */}
+          <Route path="/night" element={<Night API_URL={API_URL} />} />
+          <Route path="/girls" element={<Girls API_URL={API_URL} />} />
+          <Route path="/office" element={<Office API_URL={API_URL} />} />
+          <Route path="/summer" element={<Summer API_URL={API_URL} />} />
         </Routes>
         <Footer />
       </Router>

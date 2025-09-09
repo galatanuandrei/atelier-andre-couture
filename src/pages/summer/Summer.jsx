@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Summer.module.css";
+import Buton from "../../Components/Buton/Buton";
 
 import s1_1 from "../../assets/poze-site/summer/Produs1/1.jpeg";
 import s1_2 from "../../assets/poze-site/summer/Produs1/2.jpeg";
@@ -38,6 +39,9 @@ export default function Summer() {
 
   return (
     <section className={styles.gallery}>
+     <div style={{ marginBottom: "1rem" }}>
+        <Buton targetRoute="/gallery" />
+      </div>
       <h2>Colecția de Vară</h2>
       <div className={styles.grid}>
         {summerProducts.map(product => (

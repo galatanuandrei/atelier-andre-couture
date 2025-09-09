@@ -1,24 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Filters from "../../Components/Filters/Filters";
-import ProductList from "../../Components/ProductList/ProductList";
 import ProductForm from "../../Components/ProductForm/ProductForm";
+import ProductList from "../../Components/ProductList/ProductList";
+
 import kidsImg from "../../assets/Poze-site/Acasap/kids.jpeg";
 import officeImg from "../../assets/Poze-site/Acasap/office.jpeg";
 import searaImg from "../../assets/Poze-site/Acasap/seara.jpeg";
 import varaImg from "../../assets/Poze-site/Acasap/vara.jpg";
+
 import styles from "./GalleryPage.module.css";
 
-export default function GalleryPage({ gallery = [], setGallery, API_URL }) {
-  const { collectionId } = useParams();
+export default function GalleryPage({ API_URL }) {
   const navigate = useNavigate();
-
-  const [products, setProducts] = useState([]);
-  const [editingProduct, setEditingProduct] = useState(null);
+  const [gallery, setGallery] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const [filters, setFilters] = useState({ search: "" });
+  const [editingProduct, setEditingProduct] = useState(null);
 
-  // Extra collections for homepage/cards navigation
+  useEffect(() => {
+    fetch(`${API_URL}/gallery`)
+      .then(res => res.json())
+      .then(setGallery)
+      .catch(console.error);
+
+    // Pentru search global
+    fetch(`${API_URL}/produse`)
+      .then(res => res.json())
+      .then(setAllProducts)
+      .catch(console.error);
+  }, [API_URL]);
+
+  const handleAddNew = () => {
+    setEditingProduct(null);
+    setShowForm(true);
+  };
+
+  // Colecții speciale
   const extraCollections = [
     { collectionId: 1, title: "Girls Couture", image: kidsImg, route: "/girls" },
     { collectionId: 2, title: "Colecția Office", image: officeImg, route: "/office" },
@@ -26,34 +44,12 @@ export default function GalleryPage({ gallery = [], setGallery, API_URL }) {
     { collectionId: 4, title: "Colecția de Vară", image: varaImg, route: "/summer" },
   ];
 
-  useEffect(() => {
-    if (collectionId) {
-      setProducts(
-        gallery.filter(p => p.collectionId === Number(collectionId))
-      );
-    } else {
-      setProducts(gallery);
-    }
-  }, [collectionId, gallery]);
-
-  const q = (filters.search || "").trim().toLowerCase();
-
-  const filteredProducts = products.filter(p => {
-    const title = (p.title || "").toLowerCase();
-    const desc = (p.description || "").toLowerCase();
-    return !q || title.includes(q) || desc.includes(q);
-  });
-
-  const handleAddNew = () => {
-    setEditingProduct(null);
-    setShowForm(true);
-  };
-
   return (
     <section className={styles.gallery}>
-      <h2>Galerie Colecții</h2>
+      <h2>Galerie Produse</h2>
 
-      <Filters filters={filters} setFilters={setFilters} />
+      {/* Search global */}
+      <Filters allProducts={allProducts} />
 
       <button className={styles.btn} onClick={handleAddNew}>
         Adaugă produs nou
@@ -61,29 +57,29 @@ export default function GalleryPage({ gallery = [], setGallery, API_URL }) {
 
       {showForm && (
         <ProductForm
-          products={products}
-          setProducts={setProducts}
           gallery={gallery}
           setGallery={setGallery}
+          API_URL={API_URL}
           editingProduct={editingProduct}
           setEditingProduct={setEditingProduct}
-          API_URL={API_URL}
+          setShowForm={setShowForm}
         />
       )}
 
       <ProductList
-        products={filteredProducts.map(p => ({
-          ...p,
-          price: p.price || (Math.random() * 300 + 100).toFixed(0),
-        }))}
-        setProducts={setProducts}
-        setEditingProduct={setEditingProduct}
+        products={gallery}
+        setProducts={setGallery}
+        setEditingProduct={product => {
+          setEditingProduct(product);
+          setShowForm(true);
+        }}
         API_URL={API_URL}
       />
 
+      {/* Colecții speciale */}
       <h2 style={{ marginTop: "2.5rem" }}>Colecții Speciale</h2>
       <div className={styles.collectionsGrid}>
-        {extraCollections.map((c) => (
+        {extraCollections.map(c => (
           <div
             key={c.collectionId}
             className={styles.collectionCard}

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./GirlsCouture.module.css";
+import Buton from "../../Components/Buton/Buton";
+
 
 import g1_1 from "../../assets/poze-site/kids/Produs1/1.png";
 import g1_2 from "../../assets/poze-site/kids/Produs1/2.png";
@@ -21,6 +23,7 @@ import g7_3 from "../../assets/poze-site/kids/Produs7/17.png";
 import g8_1 from "../../assets/poze-site/kids/Produs8/18.png";
 import g8_2 from "../../assets/poze-site/kids/Produs8/19.png";
 import g8_3 from "../../assets/poze-site/kids/Produs8/20.png";
+
 
 const girlsProducts = [
   { id: 1, title: "Rochie elegantă mov", description: "Rochie din matase naturala, croiala eleganta.", images: [g1_1, g1_2], price: 210 },
@@ -45,6 +48,9 @@ export default function GirlsCouture() {
 
   return (
     <section className={styles.gallery}>
+      <div style={{ marginBottom: "1rem" }}>
+        <Buton targetRoute="/gallery" />
+      </div>
       <h2>Girls Couture</h2>
       <div className={styles.grid}>
         {girlsProducts.map(product => (

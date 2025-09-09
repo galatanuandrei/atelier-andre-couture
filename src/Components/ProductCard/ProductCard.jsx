@@ -1,21 +1,33 @@
 import React from "react";
 import styles from "./ProductCard.module.css";
 
-const ProductCard = ({ product, onClick }) => {
+const ProductCard = ({ product, setEditingProduct, setProducts, products, API_URL }) => {
+
+  const handleDelete = (id) => {
+    setProducts(products.filter(p => p.id !== id));
+
+    fetch(`${API_URL}/gallery/${id}`, { method: "DELETE" })
+      .catch(console.error);
+  };
+
   return (
-    <div className={styles.card} onClick={() => onClick(product)}>
-      <img
-        src={
-          (product.images && product.images[0]) ||
-          product.image ||
-          "https://via.placeholder.com/300x200"
-        }
-        alt={product.title}
-        className={styles.cover}
-      />
-      <h3 className={styles.title}>{product.title}</h3>
-      <p className={styles.price}>{product.price} RON</p>
-      <button className={styles.button}>Adaugă în coș</button>
+    <div className={styles.card}>
+      <div>
+        <img
+          src={(product.images && product.images[0]) || product.image || "https://via.placeholder.com/300x200"}
+          alt={product.title}
+          className={styles.cover}
+        />
+        <h3>{product.title}</h3>
+        <p className={styles.price}>{product.price} RON</p>
+      </div>
+
+      {/* Butoane centrate jos */}
+      <div className={styles.row}>
+        <button className={styles.btn} onClick={() => setEditingProduct(product)}>Editează</button>
+        <button className={styles.btnDanger} onClick={() => handleDelete(product.id)}>Șterge</button>
+        <button className={styles.btn} onClick={() => alert("Adaugă în coș")}>Adaugă în coș</button>
+      </div>
     </div>
   );
 };
