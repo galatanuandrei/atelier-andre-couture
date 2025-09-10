@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Filters from "../../Components/Filters/Filters";
 import ProductForm from "../../Components/ProductForm/ProductForm";
 import ProductList from "../../Components/ProductList/ProductList";
+
 
 import kidsImg from "../../assets/Poze-site/Acasap/kids.jpeg";
 import officeImg from "../../assets/Poze-site/Acasap/office.jpeg";
@@ -17,6 +17,7 @@ export default function GalleryPage({ API_URL }) {
   const [allProducts, setAllProducts] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+  
 
   useEffect(() => {
     fetch(`${API_URL}/gallery`)
@@ -44,12 +45,14 @@ export default function GalleryPage({ API_URL }) {
     { collectionId: 4, title: "Colecția de Vară", image: varaImg, route: "/summer" },
   ];
 
+  
+
   return (
     <section className={styles.gallery}>
       <h2>Galerie Produse</h2>
 
       
-      <Filters allProducts={allProducts} />
+      
 
       <button className={styles.btn} onClick={handleAddNew}>
         Adaugă produs nou

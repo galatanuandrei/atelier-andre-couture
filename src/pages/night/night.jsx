@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import styles from "./Night.module.css";
 import Buton from "../../Components/Buton/Buton";
+
 
 
 import p1_1 from "../../assets/poze-site/colectiiseara/Produs1/1.jpg";
@@ -156,11 +158,15 @@ export default function Night() {
       prev === selectedProduct.images.length - 1 ? 0 : prev + 1
     );
   };
+  const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = (product) => {
-    alert(`Produsul "${product.title}" a fost adăugat în coș!`);
-    
-  };
+    addToCart(product);
+    fetch("http://localhost:3008/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(product),
+    }).catch(console.error);};
 
   return (
     <section className={styles.nightGallery}>

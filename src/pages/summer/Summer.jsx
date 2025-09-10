@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 import styles from "./Summer.module.css";
 import Buton from "../../Components/Buton/Buton";
 
@@ -30,12 +31,19 @@ const summerProducts = [
 export default function Summer() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const { addToCart } = useContext(CartContext);
 
   const openPopup = (product) => { setSelectedProduct(product); setSelectedImageIndex(0); };
   const closePopup = () => setSelectedProduct(null);
   const prevImage = () => setSelectedImageIndex(prev => prev === 0 ? selectedProduct.images.length - 1 : prev - 1);
   const nextImage = () => setSelectedImageIndex(prev => prev === selectedProduct.images.length - 1 ? 0 : prev + 1);
-  const handleAddToCart = (product) => alert(`Produsul "${product.title}" a fost adăugat în coș!`);
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    fetch("http://localhost:3008/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(product),
+    }).catch(console.error);};
 
   return (
     <section className={styles.gallery}>

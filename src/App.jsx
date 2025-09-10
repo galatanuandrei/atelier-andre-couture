@@ -8,12 +8,11 @@ import Reviews from "./Components/Reviews/Reviews";
 import Footer from "./Components/Footer/Footer";
 import { CartProvider } from "./context/CartContext";
 
-
 import About from "./pages/About/About";
 import GalleryPage from "./pages/GalleryPage/GalleryPage";
 import CartPage from "./pages/CartPage/CartPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
-
+import Checkout from "./pages/CartPage/checkout";
 
 import Night from "./pages/night/night";
 import Girls from "./pages/girls/girls";
@@ -28,13 +27,12 @@ export default function App() {
 
   useEffect(() => {
     fetch(`${API_URL}/products`)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(setProducts)
       .catch(console.error);
 
-  
     fetch(`${API_URL}/gallery`)
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(setGallery)
       .catch(console.error);
   }, []);
@@ -54,8 +52,6 @@ export default function App() {
               </>
             }
           />
-
-         
           <Route path="/about" element={<About />} />
           <Route
             path="/gallery"
@@ -69,12 +65,11 @@ export default function App() {
           />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/contact" element={<ContactPage API_URL={API_URL} />} />
-
-         
-          <Route path="/night" element={<Night API_URL={API_URL} />} />
-          <Route path="/girls" element={<Girls API_URL={API_URL} />} />
-          <Route path="/office" element={<Office API_URL={API_URL} />} />
-          <Route path="/summer" element={<Summer API_URL={API_URL} />} />
+          <Route path="/night" element={<Night />} />
+          <Route path="/girls" element={<Girls />} />
+          <Route path="/office" element={<Office />} />
+          <Route path="/summer" element={<Summer />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />
       </Router>
