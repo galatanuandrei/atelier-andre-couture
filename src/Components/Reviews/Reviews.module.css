@@ -10,7 +10,7 @@
   margin-bottom: 2rem;
 }
 
-/* Slider container */
+
 .slider {
   position: relative;
   height: 180px;
@@ -63,7 +63,7 @@
   color: var(--lux-gold);
 }
 
-/* Butoane prev/next */
+
 .navButton {
   position: absolute;
   top: 50%;
@@ -86,7 +86,7 @@
 .prev { left: -1.5rem; }
 .next { right: -1.5rem; }
 
-/* Buline indicator */
+
 .indicators {
   position: absolute;
   bottom: -1.5rem;
@@ -113,7 +113,7 @@
   background: var(--lux-gold);
 }
 
-/* Responsive */
+
 @media(max-width:768px) {
   .slider {
     max-width: 90%;

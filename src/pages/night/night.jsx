@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./Night.module.css";
 import Buton from "../../Components/Buton/Buton";
 
-// --- IMAGINI PRODUSE (doar prima imagine pentru grilă, restul în popup) ---
+
 import p1_1 from "../../assets/poze-site/colectiiseara/Produs1/1.jpg";
 import p1_2 from "../../assets/poze-site/colectiiseara/Produs1/2.jpg";
 import p2_1 from "../../assets/poze-site/colectiiseara/Produs2/3.jpg";
@@ -35,7 +35,7 @@ import p8_3 from "../../assets/poze-site/colectiiseara/Produs8/26.jpeg";
 import p9_2 from "../../assets/poze-site/colectiiseara/Produs9/28.jpg";
 import p9_3 from "../../assets/poze-site/colectiiseara/Produs9/29.jpg";
 
-// --- DATE PRODUSE ---
+
 const nightProducts = [
   {
     id: 1,
@@ -159,7 +159,7 @@ export default function Night() {
 
   const handleAddToCart = (product) => {
     alert(`Produsul "${product.title}" a fost adăugat în coș!`);
-    // aici poți integra logica reală de Cart
+    
   };
 
   return (

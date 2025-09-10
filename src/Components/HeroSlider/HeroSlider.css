@@ -11,45 +11,42 @@
   border: 3px solid var(--lux-gold);
 }
 
-/* Eliminăm complet hero-text */
+
 .hero-slider .hero-text {
   display: none;
 }
 
-/* ============================= */
-/* Slick Dots Luxury Styling     */
-/* ============================= */
+
+
 .slick-dots {
-  bottom: -35px; /* puțin mai jos de slider */
+  bottom: -35px; 
 }
 
 .slick-dots li button:before {
   font-size: 12px;
-  color: var(--lux-gold);   /* buline aurii */
+  color: var(--lux-gold);   
   opacity: 0.6;
   transition: all 0.3s ease;
 }
 
 .slick-dots li.slick-active button:before {
-  color: var(--lux-pink);   /* bulina activă roz prăfuit */
+  color: var(--lux-pink);  
   opacity: 1;
   font-size: 14px;
 }
 
-/* ============================= */
-/* Dark Mode Styling for Slider  */
-/* ============================= */
+
 [data-theme="dark"] .hero-slider .hero-image {
-  border: 3px solid var(--lux-pink); /* în loc de auriu, folosește roz prăfuit */
+  border: 3px solid var(--lux-pink); 
 }
 
 [data-theme="dark"] .slick-dots li button:before {
-  color: var(--lux-white); /* buline albe în dark mode */
+  color: var(--lux-white); 
   opacity: 0.6;
 }
 
 [data-theme="dark"] .slick-dots li.slick-active button:before {
-  color: var(--lux-gold); /* bulina activă aurie */
+  color: var(--lux-gold); 
   opacity: 1;
   font-size: 14px;
 }

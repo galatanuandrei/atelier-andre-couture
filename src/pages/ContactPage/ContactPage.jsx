@@ -4,7 +4,7 @@ import designerImg from '../../assets/poze-site/atelier/atelier.jpg';
 import SocialCarusel from "../../Components/SocialMedia/SocialCarusel";
 import { instagramData, tiktokData, facebookData } from "../../Components/SocialMedia/socialData";
 
-// Iconițe Social Media
+
 import { FaTiktok, FaFacebook } from "react-icons/fa";
 
 export default function ContactPage({ API_URL, theme }) {
@@ -38,7 +38,7 @@ export default function ContactPage({ API_URL, theme }) {
     <section className={`${styles.contactPage} ${theme === 'dark' ? styles.dark : ''}`}>
       <h2>Contact</h2>
 
-      {/* Secțiune poza + date de contact */}
+      
       <div className={styles.topContainer}>
         <div className={styles.leftColumn}>
           <img src={designerImg} alt="Designer" className={styles.designerImg} />
@@ -72,7 +72,7 @@ export default function ContactPage({ API_URL, theme }) {
               <p className={styles.detailValue}>Luni - Vineri: 08:00 - 16:00</p>
             </div>
 
-            {/* Iconițe Social Media */}
+            
             <div className={styles.socialIcons}>
               <a
                 href={tiktokData[0].link}
@@ -95,7 +95,7 @@ export default function ContactPage({ API_URL, theme }) {
         </div>
       </div>
 
-      {/* Google Maps */}
+      
       <div className={styles.mapContainer}>
         <iframe
           title="Google Maps"
@@ -106,7 +106,7 @@ export default function ContactPage({ API_URL, theme }) {
         ></iframe>
       </div>
 
-      {/* Formular */}
+      
       <div className={styles.formContainer}>
         {success && <p className={styles.success}>{success}</p>}
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -134,7 +134,7 @@ export default function ContactPage({ API_URL, theme }) {
         </form>
       </div>
 
-      {/* Instagram secțiune */}
+     
       <div style={{ maxWidth: "1024px", width: "100%", margin: "2rem auto" }}>
         <SocialCarusel data={instagramData.slice(0, 3)} />
       </div>

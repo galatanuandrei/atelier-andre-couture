@@ -9,7 +9,7 @@
   letter-spacing: 0.5px;
 }
 
-/* Light mode button */
+
 .theme-toggle.light {
   background-color: var(--lux-white);
   border: 2px solid var(--lux-gold);
@@ -21,7 +21,7 @@
   color: var(--lux-white);
 }
 
-/* Dark mode button */
+
 .theme-toggle.dark {
   background-color: var(--lux-black);
   border: 2px solid var(--lux-pink);

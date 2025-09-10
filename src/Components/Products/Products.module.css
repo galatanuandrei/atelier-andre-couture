@@ -1,4 +1,4 @@
-/* Titlu Colecții */
+
 .productsSection h2 {
   color: var(--lux-gold);
   text-align: center;
@@ -6,7 +6,7 @@
   font-size: 2rem;
   position: relative;
   margin-top: 5rem;
-  visibility: hidden; /* ascunde textul original */
+  visibility: hidden; 
 }
 
 .productsSection h2::before {
@@ -15,7 +15,7 @@
   display: block;
 }
 
-/* Grid carduri */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -23,7 +23,7 @@
   justify-items: center;
 }
 
-/* Card */
+
 .card {
   position: relative;
   display: inline-flex;
@@ -34,7 +34,7 @@
   transition: transform 0.3s ease;
 }
 
-/* Imaginea păstrează dimensiunea originală și este centrată */
+
 .card img {
   display: block;
   width: auto;
@@ -43,7 +43,7 @@
   transition: transform 0.3s ease;
 }
 
-/* Overlay semi-transparent pentru text */
+
 .overlay {
   position: absolute;
   bottom: 0;
@@ -61,11 +61,11 @@
   font-size: 1.2rem;
 }
 
-/* Hover efect */
+
 .card:hover img {
-  transform: scale(1.05); /* ușoară mărire imagine */
+  transform: scale(1.05); 
 }
 
 .card:hover .overlay {
-  background: rgba(0, 0, 0, 0.6); /* overlay mai opac la hover */
+  background: rgba(0, 0, 0, 0.6); 
 }

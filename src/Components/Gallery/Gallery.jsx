@@ -8,7 +8,7 @@ export default function Gallery({ gallery, API_URL }) {
   const [editingProduct, setEditingProduct] = useState(null);
   const [showForm, setShowForm] = useState(false);
 
-  // 🔄 sincronizare dacă prop-ul gallery se schimbă
+  
   useEffect(() => {
     setProducts(gallery);
   }, [gallery]);

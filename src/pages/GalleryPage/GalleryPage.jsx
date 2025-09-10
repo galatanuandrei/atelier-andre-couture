@@ -24,7 +24,7 @@ export default function GalleryPage({ API_URL }) {
       .then(setGallery)
       .catch(console.error);
 
-    // Pentru search global
+    
     fetch(`${API_URL}/produse`)
       .then(res => res.json())
       .then(setAllProducts)
@@ -36,7 +36,7 @@ export default function GalleryPage({ API_URL }) {
     setShowForm(true);
   };
 
-  // Colecții speciale
+  
   const extraCollections = [
     { collectionId: 1, title: "Girls Couture", image: kidsImg, route: "/girls" },
     { collectionId: 2, title: "Colecția Office", image: officeImg, route: "/office" },
@@ -48,7 +48,7 @@ export default function GalleryPage({ API_URL }) {
     <section className={styles.gallery}>
       <h2>Galerie Produse</h2>
 
-      {/* Search global */}
+      
       <Filters allProducts={allProducts} />
 
       <button className={styles.btn} onClick={handleAddNew}>
@@ -76,7 +76,7 @@ export default function GalleryPage({ API_URL }) {
         API_URL={API_URL}
       />
 
-      {/* Colecții speciale */}
+      
       <h2 style={{ marginTop: "2.5rem" }}>Colecții Speciale</h2>
       <div className={styles.collectionsGrid}>
         {extraCollections.map(c => (

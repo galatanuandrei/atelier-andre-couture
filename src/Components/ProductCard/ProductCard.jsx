@@ -22,7 +22,7 @@ const ProductCard = ({ product, setEditingProduct, setProducts, products, API_UR
         <p className={styles.price}>{product.price} RON</p>
       </div>
 
-      {/* Butoane centrate jos */}
+      
       <div className={styles.row}>
         <button className={styles.btn} onClick={() => setEditingProduct(product)}>Editează</button>
         <button className={styles.btnDanger} onClick={() => handleDelete(product.id)}>Șterge</button>

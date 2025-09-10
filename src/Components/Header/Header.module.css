@@ -1,4 +1,4 @@
-/* Container general */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -11,19 +11,19 @@
   z-index: 1000;
 }
 
-/* Logo */
+
 .logoContainer {
   display: flex;
   align-items: center;
 }
 
 .logo {
-  height: 60px; /* înălțime logo pe desktop */
+  height: 60px; 
   width: auto;
   transition: all 0.3s ease;
 }
 
-/* Navigație */
+
 .nav {
   display: flex;
   align-items: center;
@@ -43,7 +43,7 @@
   border-bottom: 2px solid var(--lux-gold);
 }
 
-/* Badge coș */
+
 .cartBadge {
   background: var(--lux-pink);
   padding: 0.25rem 0.55rem;
@@ -54,7 +54,7 @@
   font-weight: 600;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
@@ -63,7 +63,7 @@
   }
 
   .logo {
-    height: 50px; /* micșorare logo pe mobil */
+    height: 50px; 
   }
 
   .nav {
@@ -73,7 +73,7 @@
   }
 }
 
-/* Dark / Light Theme */
+
 [data-theme="dark"] .header {
   background: var(--lux-black);
 }

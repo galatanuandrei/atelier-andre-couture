@@ -2,18 +2,16 @@
 
 :root {
   --font-family: "Libre Caslon Display", serif;
-  --lux-black: #0D0D0D;       /* text principal */
-  --lux-white: #FAFAFA;       /* fundal */
-  --lux-gold: #C5A572;        /* accente luxury */
-  --lux-dark: #F8F3F4;        /* fundal subtil carduri */
+  --lux-black: #0D0D0D;       
+  --lux-white: #FAFAFA;       
+  --lux-gold: #C5A572;        
+  --lux-dark: #F8F3F4;        
   --lux-red: #7B2D26;
   --lux-green: #2E7D32;
-  --lux-pink: #E8C1C5;        /* roz prăfuit accent */
+  --lux-pink: #E8C1C5;       
 }
 
-/* ============================= */
-/* Global Styles                 */
-/* ============================= */
+
 body {
   margin: 0;
   font-family: var(--font-family);
@@ -35,9 +33,7 @@ p {
   font-size: 1rem;
 }
 
-/* ============================= */
-/* Grid & Card Generic           */
-/* ============================= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
@@ -68,9 +64,7 @@ p {
   border: 1px solid var(--lux-gold);
 }
 
-/* ============================= */
-/* Buttons                       */
-/* ============================= */
+
 button {
   font-family: inherit;
   cursor: pointer;
@@ -91,11 +85,7 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* ============================= */
-/* Extra Touches Luxury Vintage  */
-/* ============================= */
 
-/* Subtil border gold pe imagini */
 img {
   border-radius: 8px;
   transition: opacity 0.3s;
@@ -104,7 +94,7 @@ img:hover {
   opacity: 0.9;
 }
 
-/* Titlurile mari cu stil vintage */
+
 h1 {
   font-size: 2.4rem;
   text-transform: uppercase;
@@ -113,16 +103,14 @@ h1 {
   padding-bottom: 0.2rem;
 }
 
-/* Card titles */
+
 .card h3 {
   color: var(--lux-black);
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
 
-/* ============================= */
-/* Responsive tweaks             */
-/* ============================= */
+
 @media(max-width:768px) {
   .grid {
     gap: 1rem;
@@ -133,9 +121,7 @@ h1 {
   }
 }
 
-/* ============================= */
-/* Dark Mode Overrides           */
-/* ============================= */
+
 [data-theme="dark"] {
   background-color: var(--lux-black);
   color: var(--lux-white);
@@ -171,9 +157,7 @@ h1 {
   color: var(--lux-black);
 }
 
-/* ============================= */
-/* Dark Mode - Link Styling      */
-/* ============================= */
+
 [data-theme="dark"] .header nav a {
   color: var(--lux-white);
 }
@@ -203,7 +187,7 @@ p {
   font-size: 1rem;
 }
 
-/* Card generic */
+
 .card {
   background: var(--lux-dark);
   border: 1px solid var(--lux-gold);
@@ -212,7 +196,7 @@ p {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Dark Mode overrides */
+
 [data-theme="dark"] body {
   background-color: var(--lux-white);
   color: var(--lux-black);

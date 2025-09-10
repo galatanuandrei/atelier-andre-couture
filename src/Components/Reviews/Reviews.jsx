@@ -12,7 +12,7 @@ const reviews = [
 export default function Reviews() {
   const [current, setCurrent] = useState(0);
 
-  // Slider automat
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent(prev => (prev + 1) % reviews.length);
@@ -42,7 +42,7 @@ export default function Reviews() {
           </div>
         ))}
 
-        {/* Butoane prev/next */}
+        
         <button className={`${styles.navButton} ${styles.prev}`} onClick={prevReview}>
           <FaChevronLeft />
         </button>
@@ -50,7 +50,7 @@ export default function Reviews() {
           <FaChevronRight />
         </button>
 
-        {/* Buline indicator */}
+        
         <div className={styles.indicators}>
           {reviews.map((_, i) => (
             <span

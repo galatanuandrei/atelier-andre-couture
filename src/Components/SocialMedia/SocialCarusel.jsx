@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./SocialCarusel.module.css";
 import { FaInstagram } from "react-icons/fa";
 
-// Import manual pozele
+
 import insta1 from "../../assets/poze-site/instagram/insta1.jpg";
 import insta2 from "../../assets/poze-site/instagram/insta2.jpg";
 import insta3 from "../../assets/poze-site/instagram/insta3.jpg";
@@ -16,13 +16,13 @@ const SocialCarusel = () => {
 
   return (
     <div className={styles.instagramSection}>
-      {/* Titlu cu iconiță Instagram */}
+     
       <div className={styles.header}>
         <FaInstagram className={styles.icon} />
         <h3>Instagram</h3>
       </div>
 
-      {/* Cele 3 poze */}
+     
       <div className={styles.imageGrid}>
         {data.map((item, index) => (
           <a

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
-        {/* Coloana 1 */}
+       
         <div className={styles.footerCol}>
           <h4>Despre</h4>
           <ul>
@@ -17,7 +17,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Coloana 2 */}
+       
         <div className={styles.footerCol}>
           <h4>Contul meu</h4>
           <ul>
@@ -30,7 +30,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Coloana 3 */}
+        
         <div className={styles.footerCol}>
           <h4>Legal</h4>
           <ul>
@@ -45,7 +45,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Coloana 4 - Newsletter */}
+        
         <div className={styles.footerCol}>
           <h4>Newsletter</h4>
           <p>Abonează-te pentru a primi noutăți despre colecții, produse și evenimente.</p>
@@ -61,7 +61,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Plata & Netopia */}
+      
       <div className={styles.paymentRow}>
         <span>Metode de plată:</span>
         <FaCcVisa className={styles.visa} />
@@ -69,7 +69,7 @@ export default function Footer() {
         <FaCcPaypal className={styles.paypal} />
       </div>
 
-      {/* Copyright */}
+     
       <div className={styles.footerBottom}>
         © {new Date().getFullYear()} Atelier Andre Couture. Toate drepturile rezervate – realizare de Andrei Galatanu
       </div>

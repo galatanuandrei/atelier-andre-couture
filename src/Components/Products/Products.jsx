@@ -26,9 +26,9 @@ export default function Products() {
             className={styles.card}
             onClick={() => {
               if (p.collectionId === 3) {
-                navigate("/night"); // Navigare către Night.jsx
+                navigate("/night"); 
               } else {
-                navigate(`/gallery/${p.collectionId}`); // Navigare către colecțiile normale
+                navigate(`/gallery/${p.collectionId}`); 
               }
             }}
           >

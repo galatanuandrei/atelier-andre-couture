@@ -41,7 +41,7 @@
   color: var(--lux-gold);
 }
 
-/* Newsletter */
+
 .footerCol p {
   font-size: 0.75rem;
   margin-bottom: 0.5rem;
@@ -89,12 +89,12 @@
   transform: scale(1.2);
 }
 
-/* Culori oficiale pentru social media */
+
 .instagram { color: #E4405F; }
 .facebook { color: #1877F2; }
 .tiktok { color: #000000; }
 
-/* Payment row */
+
 .paymentRow {
   display: flex;
   align-items: center;
@@ -118,7 +118,7 @@
   opacity: 0.85;
 }
 
-/* Bottom */
+
 .footerBottom {
   text-align: center;
   border-top: 1px solid rgba(255,255,255,0.2);
@@ -126,7 +126,7 @@
   font-size: 0.7rem;
 }
 
-/* Responsive */
+
 @media(max-width:768px) {
   .footerTop {
     grid-template-columns: 1fr 1fr;
@@ -137,7 +137,7 @@
   .newsletterForm button { border-radius: 4px; }
 }
 
-/* Light / Dark */
+
 [data-theme="dark"] .footer {
   background-color: var(--lux-black);
   color: var(--lux-white);

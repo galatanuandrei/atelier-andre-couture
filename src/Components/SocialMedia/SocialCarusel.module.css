@@ -22,7 +22,7 @@
   color: var(--lux-pink);
 }
 
-/* Grid pentru 3 imagini pe rând */
+
 .imageGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -34,7 +34,7 @@
 
 .image {
   width: 100%;
-  aspect-ratio: 1 / 1; /* pătrat */
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease;
@@ -44,7 +44,7 @@
   transform: scale(1.05);
 }
 
-/* Responsive pentru ecrane mici */
+
 @media (max-width: 768px) {
   .imageGrid {
     grid-template-columns: repeat(2, 1fr);
