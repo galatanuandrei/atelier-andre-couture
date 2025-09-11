@@ -1,5 +1,5 @@
 .backBtn {
-  position: flexed;
+  position: flex;
   top: 20px;
   left: 20px;
   background-color: var(--lux-vhite);
@@ -11,7 +11,7 @@
   border-radius: 5px;
   z-index: 2000;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  margin-left: -8rem;
+  margin-left: 0rem;
 
 }
 .backBtn:hover {
