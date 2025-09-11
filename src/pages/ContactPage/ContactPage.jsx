@@ -75,7 +75,7 @@ export default function ContactPage({ API_URL, theme }) {
             
             <div className={styles.socialIcons}>
               <a
-                href={tiktokData[0].link}
+                href="https://www.tiktok.com/@raluandre?_t=ZN-8zWl6f6vMso&_r=1"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
@@ -83,7 +83,7 @@ export default function ContactPage({ API_URL, theme }) {
                 <FaTiktok />
               </a>
               <a
-                href={facebookData[0].link}
+                href="https://www.facebook.com/atelierraluandrecouture"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"

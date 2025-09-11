@@ -56,5 +56,5 @@ export const tiktokData = [
 ];
 
 export const facebookData = [
-  { link: "https://www.facebook.com/ralu.andre" },
+  { link: "https://www.facebook.com/atelierraluandrecouture" },
 ];
