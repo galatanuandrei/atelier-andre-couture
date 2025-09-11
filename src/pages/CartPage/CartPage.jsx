@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
@@ -18,9 +19,11 @@ export default function CartPage() {
   }
 
   const getImage = (item) => {
+   
     if (item.image) return item.image;
 
-    switch(item.collection) {
+    
+    switch (item.collection) {
       case "night": return nightImg;
       case "girls": return girlsImg;
       case "office": return officeImg;
@@ -34,39 +37,30 @@ export default function CartPage() {
       <h2>Coșul tău</h2>
 
       <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-        <button className="btn btn-danger" onClick={clearCart}>
-          🗑 Golește coșul
-        </button>
+        <button className="btn btn-danger" onClick={clearCart}>🗑 Golește coșul</button>
       </div>
 
       <div className="grid">
-        {cart.map(item => (
+        {cart.map((item) => (
           <div key={item.id} className="card">
-            <img 
-              src={getImage(item)} 
-              alt={item.name || "Produs"} 
-              className="cover" 
+            <img
+              src={getImage(item)}
+              alt={item.name || item.title || "Produs"}
+              className="cover"
             />
-            <h3>{item.name || "Produs fără nume"}</h3>
+            <h3>{item.title || item.name || "Produs fără nume"}</h3>
             {item.description && <p>{item.description}</p>}
-            <p>Preț: {item.price ? `${item.price} €` : "Preț nedefinit"}</p>
-            <button 
-              className="btn btn-danger" 
-              onClick={() => removeFromCart(item.id)}
-            >
-              Elimină din coș
-            </button>
+            <p>Preț: {item.price ? `${item.price} RON` : "Preț nedefinit"}</p>
+
+            <div style={{ display: "flex", gap: 8, marginTop: 8 }}>
+              <button className="btn btn-danger" onClick={() => removeFromCart(item.id)}>Elimină din coș</button>
+            </div>
           </div>
         ))}
       </div>
 
       <div style={{ textAlign: "center", marginTop: "2rem" }}>
-        <button 
-          className="btn btn-primary" 
-          onClick={() => navigate("/checkout")}
-        >
-          ✅ Finalizează comanda
-        </button>
+        <button className="btn btn-primary" onClick={() => navigate("/checkout")}>✅ Finalizează comanda</button>
       </div>
     </section>
   );

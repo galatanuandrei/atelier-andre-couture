@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import styles from './ContactPage.module.css';
 import designerImg from '../../assets/poze-site/atelier/atelier.jpg';
 import SocialCarusel from "../../Components/SocialMedia/SocialCarusel";
-import { instagramData, tiktokData, facebookData } from "../../Components/SocialMedia/socialData";
-
-
+import { instagramData } from "../../Components/SocialMedia/socialData";
 import { FaTiktok, FaFacebook } from "react-icons/fa";
 
-export default function ContactPage({ API_URL, theme }) {
+// 🟢 URL direct spre mock server
+const API_URL = "http://localhost:3008";
+
+export default function ContactPage({ theme }) {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [success, setSuccess] = useState("");
 
@@ -16,14 +17,23 @@ export default function ContactPage({ API_URL, theme }) {
     if (!form.name || !form.email || !form.message) {
       return alert("Completează toate câmpurile!");
     }
+    console.log("Trimit formular:", form);
 
     fetch(`${API_URL}/messages`, {
       method: "POST",
+      mode: "cors",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        ...form,
+        date: new Date().toISOString()
+      }),
     })
-      .then(res => {
-        if (!res.ok) throw new Error("Eroare la trimitere");
+    
+      .then(async res => {
+        if (!res.ok) {
+          const txt = await res.text();
+          throw new Error(`Eroare server: ${res.status} ${txt}`);
+        }
         return res.json();
       })
       .then(() => {
@@ -38,7 +48,6 @@ export default function ContactPage({ API_URL, theme }) {
     <section className={`${styles.contactPage} ${theme === 'dark' ? styles.dark : ''}`}>
       <h2>Contact</h2>
 
-      
       <div className={styles.topContainer}>
         <div className={styles.leftColumn}>
           <img src={designerImg} alt="Designer" className={styles.designerImg} />
@@ -72,7 +81,6 @@ export default function ContactPage({ API_URL, theme }) {
               <p className={styles.detailValue}>Luni - Vineri: 08:00 - 16:00</p>
             </div>
 
-            
             <div className={styles.socialIcons}>
               <a
                 href="https://www.tiktok.com/@raluandre?_t=ZN-8zWl6f6vMso&_r=1"
@@ -95,7 +103,6 @@ export default function ContactPage({ API_URL, theme }) {
         </div>
       </div>
 
-      
       <div className={styles.mapContainer}>
         <iframe
           title="Google Maps"
@@ -106,7 +113,6 @@ export default function ContactPage({ API_URL, theme }) {
         ></iframe>
       </div>
 
-      
       <div className={styles.formContainer}>
         {success && <p className={styles.success}>{success}</p>}
         <form onSubmit={handleSubmit} className={styles.form}>
@@ -134,7 +140,6 @@ export default function ContactPage({ API_URL, theme }) {
         </form>
       </div>
 
-     
       <div style={{ maxWidth: "1024px", width: "100%", margin: "2rem auto" }}>
         <SocialCarusel data={instagramData.slice(0, 3)} />
       </div>

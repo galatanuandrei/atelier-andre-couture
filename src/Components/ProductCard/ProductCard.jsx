@@ -19,10 +19,15 @@ const ProductCard = ({ product, setEditingProduct, setProducts, products, API_UR
           className={styles.cover}
         />
         <h3>{product.title}</h3>
+
+        
+        {product.description && (
+          <p className={styles.description}>{product.description}</p>
+        )}
+
         <p className={styles.price}>{product.price} RON</p>
       </div>
 
-      
       <div className={styles.row}>
         <button className={styles.btn} onClick={() => setEditingProduct(product)}>Editează</button>
         <button className={styles.btnDanger} onClick={() => handleDelete(product.id)}>Șterge</button>

@@ -28,8 +28,9 @@ export default function Checkout() {
     const newOrder = {
       ...formData,
       products: cart,
+      total: cart.reduce((sum, item) => sum + (item.price || 0), 0),
       date: new Date().toISOString(),
-      status: "în procesare"
+      status: "în procesare",
     };
 
     try {
@@ -59,6 +60,8 @@ export default function Checkout() {
     );
   }
 
+  const total = cart.reduce((sum, item) => sum + (item.price || 0), 0);
+
   return (
     <section className={styles.checkout}>
       <h2>Finalizează comanda</h2>
@@ -68,10 +71,12 @@ export default function Checkout() {
         <ul>
           {cart.map((item) => (
             <li key={item.id}>
-              {item.name} - {item.price ? `${item.price} RON` : "Preț nedefinit"}
+              {item.title || item.name} —{" "}
+              {item.price ? `${item.price} RON` : "Preț nedefinit"}
             </li>
           ))}
         </ul>
+        <h4>Total: {total} RON</h4>
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit}>

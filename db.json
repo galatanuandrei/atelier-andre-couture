@@ -1,77 +1,148 @@
 {
   "products": [
-    { "id": 1, "title": "Colecția de Vară", "description": "Ținute lejere și elegante pentru zile însorite.", "image": "https://via.placeholder.com/300x200?text=Colecția+Vară" },
-    { "id": 2, "title": "Girls Couture", "description": "Eleganță și rafinament în garderoba fetelor, cu piese exclusive pentru momente speciale.", "image": "https://via.placeholder.com/300x200?text=Colecția+Iarnă" },
-    { "id": 3, "title": "Colecția de Seară", "description": "Ținute elegante pentru petreceri și seri deosebite.", "image": "https://via.placeholder.com/300x200?text=Colecția+Seară" },
-    { "id": 4, "title": "Colecția Office", "description": "Piese elegante și rafinate, perfecte pentru garderoba office cu stil și lux.", "image": "https://via.placeholder.com/300x200?text=Colecția+Casual" }
+    {
+      "id": "1",
+      "title": "Colecția de Vară",
+      "description": "Ținute lejere și elegante pentru zile însorite.",
+      "image": "https://via.placeholder.com/300x200?text=Colecția+Vară"
+    },
+    {
+      "id": "2",
+      "title": "Girls Couture",
+      "description": "Eleganță și rafinament în garderoba fetelor, cu piese exclusive pentru momente speciale.",
+      "image": "https://via.placeholder.com/300x200?text=Colecția+Iarnă"
+    },
+    {
+      "id": "3",
+      "title": "Colecția de Seară",
+      "description": "Ținute elegante pentru petreceri și seri deosebite.",
+      "image": "https://via.placeholder.com/300x200?text=Colecția+Seară"
+    },
+    {
+      "id": "4",
+      "title": "Colecția Office",
+      "description": "Piese elegante și rafinate, perfecte pentru garderoba office cu stil și lux.",
+      "image": "https://via.placeholder.com/300x200?text=Colecția+Casual"
+    }
   ],
-
   "gallery": [
-    { "id": 1, "title": "Rochii de mireasă", "image": "https://via.placeholder.com/300x200?text=Rochii+Mireasa" },
-    { "id": 2, "title": "Accesorii unice", "image": "https://via.placeholder.com/300x200?text=Accesorii" }
+    {
+      "id": "1",
+      "title": "Rochii de mireasă",
+      "image": "https://via.placeholder.com/300x200?text=Rochii+Mireasa"
+    },
+    {
+      "id": "2",
+      "title": "Accesorii unice",
+      "image": "https://via.placeholder.com/300x200?text=Accesorii"
+    }
   ],
-
-  "messages": [],
-  "cart": [],
-
   "produse": [
     {
-      "id": 101,
+      "id": "101",
       "title": "Rochie din mătase albastră",
       "description": "Elegantă, ideală pentru seară",
       "image": "/poze-site/night/Produs1/1.png",
       "collection": "night"
     },
     {
-      "id": 102,
+      "id": "102",
       "title": "Rochie neagră cu paiete",
       "description": "Ținută spectaculoasă pentru petreceri",
       "image": "/poze-site/night/Produs2/1.png",
       "collection": "night"
     },
     {
-      "id": 103,
+      "id": "103",
       "title": "Costum office gri",
       "description": "Modern și profesional",
       "image": "/poze-site/office/Produs1/1.png",
       "collection": "office"
     },
     {
-      "id": 104,
+      "id": "104",
       "title": "Sacou bej elegant",
       "description": "Perfect pentru întâlniri business",
       "image": "/poze-site/office/Produs2/1.png",
       "collection": "office"
     },
     {
-      "id": 105,
+      "id": "105",
       "title": "Rochie vară albă",
       "description": "Ușoară și lejeră din bumbac",
       "image": "/poze-site/summer/Produs1/1.png",
       "collection": "summer"
     },
     {
-      "id": 106,
+      "id": "106",
       "title": "Rochie vară florală",
       "description": "Colorată, ideală pentru vacanțe",
       "image": "/poze-site/summer/Produs2/1.png",
       "collection": "summer"
     },
     {
-      "id": 107,
+      "id": "107",
       "title": "Rochie copii roz",
       "description": "Delicată și confortabilă",
       "image": "/poze-site/girls/Produs1/1.png",
       "collection": "girls"
     },
     {
-      "id": 108,
+      "id": "108",
       "title": "Rochie copii albă cu volane",
       "description": "Pentru evenimente speciale",
       "image": "/poze-site/girls/Produs2/1.png",
       "collection": "girls"
     }
   ],
-
-  "comenzii":[]
+  "messages": [
+    {
+      "id": "214b",
+      "name": "Ana",
+      "email": "ana@test.com",
+      "message": "Salut"
+    },
+    {
+      "id": "de2a",
+      "name": "Andrei Andreea",
+      "email": "galatanu2@gmail.com",
+      "message": "rochie",
+      "date": "2025-09-11T17:40:45.732Z"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "title": "Rochie elegantă mov",
+      "description": "Rochie din matase naturala, croiala eleganta.",
+      "images": [
+        "/src/assets/Poze-site/kids/Produs1/1.png",
+        "/src/assets/Poze-site/kids/Produs1/2.png"
+      ],
+      "price": 210
+    }
+  ],
+  "comenzi": [
+    {
+      "id": "eee1",
+      "name": "asd",
+      "email": "asd@gmail.com",
+      "address": "asd",
+      "payment": "card",
+      "products": [
+        {
+          "id": "6c03",
+          "productId": "1",
+          "title": "Rochie elegantă mov",
+          "price": 210,
+          "image": null,
+          "collection": null,
+          "description": "Rochie din matase naturala, croiala eleganta."
+        }
+      ],
+      "total": 210,
+      "date": "2025-09-11T18:29:46.180Z",
+      "status": "în procesare"
+    }
+  ]
 }
