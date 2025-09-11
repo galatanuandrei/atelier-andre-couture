@@ -1,56 +1,73 @@
-# Atelier Andre Couture
+Structura proiectului
 
-## Descriere
-Aplicație web pentru gestionarea unui magazin de îmbrăcăminte.  
-Permite adăugarea, editarea și ștergerea produselor, filtrare, sortare și schimbarea temei light/dark.
+src/
+│
+├── App.jsx
+├── main.jsx
+├── styles/
+│   └── global.css
+│
+├── context/
+│   └── CartContext.jsx
+│
+├── hooks/
+│   └── useLocalStorage.js
+│
+├── Components/
+│   ├── Header/Header.jsx
+│   ├── Footer/Footer.jsx
+│   ├── HeroSlider/HeroSlider.jsx
+│   ├── Products/Products.jsx
+│   ├── ProductList/ProductList.jsx
+│   ├── ProductCard/ProductCard.jsx
+│   ├── ProductForm/ProductForm.jsx
+│   ├── Reviews/Reviews.jsx
+│   ├── SocialMedia/SocialCarusel.jsx
+│   ├── ThemeToggle/ThemeToggle.jsx
+│   └── Buton/Buton.jsx
+│
+├── pages/
+│   ├── About/About.jsx
+│   ├── GalleryPage/GalleryPage.jsx
+│   ├── girls/GirlsCouture.jsx
+│   ├── night/Night.jsx
+│   ├── office/Office.jsx
+│   ├── summer/Summer.jsx
+│   ├── CartPage/CartPage.jsx
+│   ├── CartPage/checkout.jsx
+│   └── ContactPage/ContactPage.jsx
+│
+└── assets/
+    ├── poze-site/...
+        └── AcasaP/...
+        └── atelier/...
+        └── Carusel/...
+        └── colectiiseara/... ( de la Produs1 - Produs11 )
+        └── Designer/...
+        └── instagram/...
+        └── kids/... ( de la Produs1 - Produs8 )
+        └── Logo/...
+        └── office/...( de la Produs1 - Produs5 )
+        └── summer/... ( de la Produs1 - Produs4 )
+        
+        
+Tehnologii folosite
 
-## Tehnologii folosite
-- React + Vite
-- JavaScript (ES6+)
-- CSS3 (Grid/Flexbox)
-- JSON Server (mock API)
-- LocalStorage pentru temă
-- Hooks: useState, useEffect, useMemo
-- Structură componentizată
+React – pentru structurarea componentelor reutilizabile.
+React Router DOM – pentru navigare între pagini (<Route>, useNavigate, Link).
+React Context API – gestionarea stării globale a coșului de cumpărături (CartContext).
+Hooks:
+useState, useEffect – pentru gestionarea stărilor și efectelor secundare.
+useContext – pentru accesarea stării globale.
+useLocalStorage (hook custom) – persistă datele în localStorage.
+CSS modules (ex: Header.module.css) – pentru stilizare locală (scop limitat la componentă).
+CSS global (global.css) – pentru stiluri aplicabile întregii aplicații.
+react-icons – pentru pictograme (Facebook, Instagram, Visa etc.).
+react-slick – carusel de imagini în componenta HeroSlider.
 
-## Instalare și rulare local
-1. Clonează proiectul sau descarcă-l:
-```bash
-git clone <URL_PROIECT>
-
-
-atelier-andre-couture/
-├─ db.json
-├─ package.json
-└─ src/
-   ├─ main.jsx
-   ├─ App.jsx
-   ├─ App.css
-   ├─ hooks/
-   │   └─ useLocalStorage.js
-   └─ components/
-       ├─ Header.jsx
-       ├─ Footer.jsx
-       ├─ ThemeToggle.jsx
-       ├─ ProductForm.jsx
-       ├─ ProductList.jsx
-       ├─ ProductCard.jsx
-       └─ Filters.jsx
-
-Funcționalități
-Adaugă produse noi
-Editează produse existente
-Șterge produse
-Filtrare după categorie și căutare text
-Sortare după preț sau dată
-Schimbare temă light/dark
-Persistență a temei în LocalStorage
-Interfață responsive (desktop, tabletă, mobil)
-
-
-Note
-Folosit fetch nativ pentru API
-Hook personalizat useLocalStorage pentru gestionarea temei
-Mock API cu JSON Server pentru simulare backend
-
-
+💡 De ce am ales această arhitectură
+Componentizare – fiecare funcționalitate este izolată într-o componentă, ușurând testarea și reutilizarea.
+CSS Modules – evită conflictele de clase CSS și permit stilizare scoped.
+Manual imports – am ales importuri manuale pentru a controla granular ce fișiere se includ, reducând bundle-ul.
+Alternativ, puteam folosi un index.js barrel file în fiecare folder pentru exporturi automate, dar asta ar crește bundle-ul și ar putea introduce circular imports.
+React Router – mai flexibil decât alternative ca Next.js (care este opinionated) sau Gatsby (mai bun pentru conținut static, nu pentru CRUD cu API local).
